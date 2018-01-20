@@ -31,11 +31,11 @@ void enemyManager::release()
 
 void enemyManager::render()
 {
-	_wiggle->draw(getMemDC());
+	draw();
 }
 
 void enemyManager::draw()
 {
-
+	_wiggle->draw(getMemDC());
 }
 
