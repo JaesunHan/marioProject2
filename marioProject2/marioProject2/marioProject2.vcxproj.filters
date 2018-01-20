@@ -67,6 +67,9 @@
     <Filter Include="playGround\titleScene">
       <UniqueIdentifier>{c71fb713-4fc1-463b-8390-51ae24c3f3f5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="playGround\enemy">
+      <UniqueIdentifier>{791da73d-3316-49f4-a3c5-83295613e648}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -172,7 +175,7 @@
       <Filter>playGround\titleScene</Filter>
     </ClCompile>
     <ClCompile Include="enemy.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>playGround\enemy</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -309,7 +312,7 @@
       <Filter>playGround\titleScene</Filter>
     </ClInclude>
     <ClInclude Include="enemy.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>playGround\enemy</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
