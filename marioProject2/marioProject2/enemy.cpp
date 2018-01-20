@@ -5,8 +5,8 @@
 
 enemy::enemy()
 {
-}
 
+}
 
 enemy::~enemy()
 {

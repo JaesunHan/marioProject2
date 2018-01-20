@@ -15,13 +15,10 @@ playGround::~playGround()
 HRESULT playGround::init()
 {
 	gameNode::init(true);
-<<<<<<< HEAD
-=======
+
 	_select = new selectScene;
 	addImage();
->>>>>>> fa9bfc8f0b078bd78326bdfca439b901cbfa8394
-	
-	addImage();
+
 
 	SCENEMANAGER->addScene("ºø∑∫∆Ææ¿", new selectScene);
 	SCENEMANAGER->addScene("≈∏¿Ã∆≤æ¿", new titleScene);
