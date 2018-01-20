@@ -20,7 +20,7 @@ HRESULT gameScene::init()
 	_EM = new enemyManager;
 	_EM->init();
 	_player = new tanukiMario;
-	_player->init("tanukiMarioIdleImage", WINSIZEX / 2, 650, FROG);
+	_player->init("tanukiMarioIdleImage", ".\\image\\tanukiMarioIdle.bmp", 100, 535, 126, 270, 1, 2, TANUKI);
 	
 
 	return S_OK;

@@ -28,5 +28,5 @@ void tanukiMario::update()
 
 void tanukiMario::render() 
 {
-	IMAGEMANAGER->findImage("tanukiMarioIdleImage")->frameRender(getMemDC(), WINSIZEX / 2, 650, _currentFrameX, _directionNum);
+	IMAGEMANAGER->findImage("tanukiMarioIdleImage")->frameRender(getMemDC(), _playerX, _playerY, _currentFrameX, _directionNum);
 }
