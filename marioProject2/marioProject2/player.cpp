@@ -33,8 +33,10 @@ HRESULT player::init(const char * imageName, float x, float y, PLAYERTYPE player
 	//플레이어렉트
 	_playerRc = RectMakeCenter(_playerX, _playerY, _imageName->getFrameWidth(), _imageName->getFrameHeight());
 
+	_probeX = _playerRc.left;		// 플레이어 렉트의 left로 검출 
+	_probeY = _playerRc.top;		// 플레이어 렉트의 top으로 검출
 
-	//상태에 대한 기본세팅//
+									/////////상태에 대한 기본세팅//////////
 
 	_directionNum = RIGHT;					//오른쪽 보고 있으니까 횡스크롤 만세
 	_statusNum = IDLE;						//대기대기대기대기박대기
@@ -98,15 +100,19 @@ void player::KeyControl()
 {
 	if (KEYMANAGER->isStayKeyDown('A'))
 	{//왼쪽
-
+		_statusNum = MOVE;
+		_whereNum = ONLAND;
 		_imageName->setX(_imageName->getX() - _speed);
 	}
 	if (KEYMANAGER->isStayKeyDown('D'))
 	{//오른쪽
+		_statusNum = MOVE;
+		_whereNum = ONLAND;
 		_imageName->setX(_imageName->getX() + _speed);
 	}
 	if (KEYMANAGER->isStayKeyDown('W'))
 	{//점프
+		_statusNum = JUMP;
 		_isJump = true;
 		_whereNum = OFFLAND;
 	}
@@ -118,6 +124,11 @@ void player::KeyControl()
 
 void player::playerJump()
 {
+	//if (_isJump)
+	//{
+	//	_imageName->setY(_imageName->getY() + _gravity);
+	//	_playerRc = RectMakeCenter();
+	//}
 }
 
 void player::draw()
@@ -127,9 +138,27 @@ void player::draw()
 
 void player::imageControl()
 {
+
+	//이미지 컨트롤용 스위치 케이스문
+	//각 케이스별의 이미지를 넣어주면 됩니다.
+	//_imageName = IMAGEMANAGER->findImage("이미지명") 사용으로 각 케이스별의 이미지를 주면 될거 같습니다.
+
 	switch (_statusNum)
 	{
 	default:
 		break;
+
+	case IDLE:
+		break;
+
+	case JUMP:
+		break;
+
+	case MOVE:
+		break;
+
+	case RUN:
+		break;
+
 	}
 }

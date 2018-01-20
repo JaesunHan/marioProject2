@@ -49,7 +49,8 @@ protected:
 	RECT _playerRc;				//이미지 렉트용
 	float _playerX;				//플레이어 x
 	float _playerY;				//플레이어 y
-	float _probeY;				//플레이어 바닥 프로브
+	int _probeY;				//플레이어 y좌표 검출
+	int _probeX;				//플레이어 x좌표 검출
 
 
 	int _currentFrameX;			//프레임 관리용 x
@@ -63,12 +64,12 @@ protected:
 
 								///////////////이넘문 구분용///////////////
 
-	PLAYERTYPE _typeNum;				//플레이어 타입 구분용
+	PLAYERTYPE _typeNum;					//플레이어 타입 구분용
 	PLAYERDIRECTION _directionNum;			//플레이어 방향 구분용
 	PLAYERSTATUS _statusNum;				//플레이어 스테이터스 구분용
-	int _whereNum;				//플레이어 위치 구분용
+	int _whereNum;							//플레이어 위치 구분용
 
-								///////////////bool값 정리들///////////////
+											///////////////bool값 정리들///////////////
 
 	bool _isRight;				//오른쪽이니?
 	bool _isIdle;				//대기상태니?
@@ -95,12 +96,12 @@ public:
 	void draw();														//랜더전에 따로 그려서 관리하는 함수
 	virtual void imageControl();											//이미지 변환제어 함수
 
-																			//렉트 반환용 겟함수
-	inline RECT getRect() { return _playerRc; }
+
+	inline RECT getRect() { return _playerRc; }							//렉트 반환용 겟함수
+	inline int getPlayerProbeY() { return _probeY; }					//충돌검출 Y좌표 
+	inline int getPlayerProbeX() { return _probeX; }					//충돌검출 X좌표 
 
 
-
-	//bool getisSpell1() { return _isSpell1; }
 
 
 };
