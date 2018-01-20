@@ -40,13 +40,13 @@ enum PLAYERWHERE
 	ENDWHERE
 };
 
-class player :public gameNode
+class player : public gameNode
 {
 protected:
 
 
 	image* _imageName;			//이미지 등록용
-	RECT _playerRc;					//이미지 렉트용
+	RECT _playerRc;				//이미지 렉트용
 	float _playerX;				//플레이어 x
 	float _playerY;				//플레이어 y
 	float _probeY;				//플레이어 바닥 프로브
