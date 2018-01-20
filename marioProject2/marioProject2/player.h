@@ -45,7 +45,7 @@ class player : public gameNode
 protected:
 
 
-	image* _imageName;			//이미지 등록용
+	image * _imageName;			//이미지 등록용
 	RECT _playerRc;				//이미지 렉트용
 	float _playerX;				//플레이어 x
 	float _playerY;				//플레이어 y
@@ -84,7 +84,7 @@ public:
 
 
 	HRESULT init();
-	HRESULT init(const char* imageName, float x, float y, PLAYERTYPE playerType);
+	HRESULT init(string imgKey, char* imgFileName, float x, float y, int totalWidth, int totalHeight, int frameNumX, int frameNumY, PLAYERTYPE playerType);
 	void release();
 	void update();
 	void render();
@@ -94,7 +94,7 @@ public:
 	virtual void KeyControl();											//키컨트롤 함수
 	void playerJump();													//점프함수
 	void draw();														//랜더전에 따로 그려서 관리하는 함수
-	virtual void imageControl();											//이미지 변환제어 함수
+	virtual void imageControl();										//이미지 변환제어 함수
 
 
 	inline RECT getRect() { return _playerRc; }							//렉트 반환용 겟함수
