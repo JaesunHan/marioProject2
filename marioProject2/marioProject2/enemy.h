@@ -13,12 +13,13 @@ private:
 	int _width, _height;
 
 public:
-	virtual HRESULT init();
+	virtual HRESULT init(string imgKey, char* imgFileName, float x, float y, int totalWidth, int totalHeight, int frameNumX, int frameNumY);
 	virtual void update();
 	virtual void release();
 	virtual void render();
-	virtual void draw();
+	virtual void draw(HDC hdc);
 
+	virtual void startAnim();
 
 	enemy();
 	~enemy();
