@@ -15,8 +15,10 @@ enemyWiggle::~enemyWiggle()
 
 HRESULT enemyWiggle::init()	   
 {
-	enemy::init("enemyWiggle", "./image/Wiggler.bmp", WINSIZEX / 2, WINSIZEY - 200, 720, 90, 4, 1);
-
+	_x = WINSIZEX / 2;
+	_y = WINSIZEY - 200;
+	enemy::init("enemyWiggle", "./image/Wiggler.bmp", _x, _y, 720, 90, 4, 1);
+	
 	return S_OK;
 }
 void enemyWiggle::update()	   
