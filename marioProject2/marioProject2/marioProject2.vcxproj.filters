@@ -180,6 +180,9 @@
     <ClCompile Include="playGround+collision.cpp">
       <Filter>playGround</Filter>
     </ClCompile>
+    <ClCompile Include="enemyManager.cpp">
+      <Filter>playGround\enemy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="randomFunction.h">
@@ -310,6 +313,9 @@
     </ClInclude>
     <ClInclude Include="gameScene.h">
       <Filter>playGround\gameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyManager.h">
+      <Filter>playGround\enemy</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
