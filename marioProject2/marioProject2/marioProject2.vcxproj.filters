@@ -183,13 +183,11 @@
     <ClCompile Include="player.cpp">
       <Filter>playGround\player</Filter>
     </ClCompile>
-<<<<<<< HEAD
-    <ClCompile Include="enemyWiggle.cpp">
-      <Filter>playGround\enemy</Filter>
-=======
     <ClCompile Include="tanukiMario.cpp">
       <Filter>playGround\player</Filter>
->>>>>>> 58c7cb29addea3666cbfca13f416618c97bb29e4
+    </ClCompile>
+    <ClCompile Include="enemyWiggle.cpp">
+      <Filter>playGround\enemy</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -331,13 +329,11 @@
     <ClInclude Include="player.h">
       <Filter>playGround\player</Filter>
     </ClInclude>
-<<<<<<< HEAD
-    <ClInclude Include="enemyWiggle.h">
-      <Filter>playGround\enemy</Filter>
-=======
     <ClInclude Include="tanukiMario.h">
       <Filter>playGround\player</Filter>
->>>>>>> 58c7cb29addea3666cbfca13f416618c97bb29e4
+    </ClInclude>
+    <ClInclude Include="enemyWiggle.h">
+      <Filter>playGround\enemy</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
