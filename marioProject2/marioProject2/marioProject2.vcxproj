@@ -23,7 +23,7 @@
     <ProjectGuid>{4080CAB6-631F-4559-BED9-7E5B0FF8F523}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>marioProject2</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -157,6 +157,7 @@
     <ClCompile Include="iniDataManager.cpp" />
     <ClCompile Include="keyManager.cpp" />
     <ClCompile Include="pixelCollision.cpp" />
+    <ClCompile Include="player.cpp" />
     <ClCompile Include="playGround+addImage.cpp" />
     <ClCompile Include="playGround.cpp" />
     <ClCompile Include="progressBar.cpp" />
@@ -202,6 +203,7 @@
     <ClInclude Include="iniDataManager.h" />
     <ClInclude Include="keyManager.h" />
     <ClInclude Include="pixelCollision.h" />
+    <ClInclude Include="player.h" />
     <ClInclude Include="playGround.h" />
     <ClInclude Include="progressBar.h" />
     <ClInclude Include="randomFunction.h" />
