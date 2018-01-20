@@ -1,6 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+<<<<<<< HEAD
 # Visual Studio 2010
+=======
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2024
+MinimumVisualStudioVersion = 10.0.40219.1
+>>>>>>> fa9bfc8f0b078bd78326bdfca439b901cbfa8394
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "marioProject2", "marioProject2\marioProject2.vcxproj", "{4080CAB6-631F-4559-BED9-7E5B0FF8F523}"
 EndProject
 Global
@@ -22,5 +28,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C0043293-BDCE-4262-9647-4237F103F7F7}
 	EndGlobalSection
 EndGlobal
