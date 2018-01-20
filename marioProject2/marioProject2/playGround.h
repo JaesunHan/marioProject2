@@ -3,13 +3,14 @@
 //#include "starcraftScene.h"
 #include "selectScene.h"
 #include "titleScene.h"
+#include "gameScene.h"
 
 
 
 class playGround : public gameNode
 {
 private:
-	selectScene* _select;
+	//selectScene* _select;
 
 public:
 	virtual HRESULT init(void);		//초기화 함수
@@ -18,6 +19,7 @@ public:
 	virtual void render(void);		//그려주는 함수
 
 	void addImage(void);
+	void collision(void);
 
 	playGround();
 	~playGround();

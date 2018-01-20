@@ -29,8 +29,8 @@ void enemyWiggle::release()
 
 }
 
-void enemyWiggle::draw()
+void enemyWiggle::draw(HDC hdc)
 {
 	
-	_img->aniRender(getMemDC(), _x, _y, _anim);
+	_img->aniRender(hdc, _x, _y, _anim);
 }
