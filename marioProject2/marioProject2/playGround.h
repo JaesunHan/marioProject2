@@ -1,13 +1,15 @@
 #pragma once
 #include "gameNode.h"
-#include "starcraftScene.h"
+//#include "starcraftScene.h"
 #include "selectScene.h"
+#include "titleScene.h"
+
+
 
 class playGround : public gameNode
 {
 private:
 	
-	gameNode* _select;
 	
 
 public:

@@ -15,13 +15,18 @@ playGround::~playGround()
 HRESULT playGround::init()
 {
 	gameNode::init(true);
+<<<<<<< HEAD
+=======
 	_select = new selectScene;
 	addImage();
+>>>>>>> fa9bfc8f0b078bd78326bdfca439b901cbfa8394
 	
-	SCENEMANAGER->addScene("¼¿·ºÆ®¾À", _select);
-	SCENEMANAGER->addScene("½ºÅ¸¾À", new starcraftScene);
+	addImage();
 
-	SCENEMANAGER->changeScene("½ºÅ¸¾À");
+	SCENEMANAGER->addScene("¼¿·ºÆ®¾À", new selectScene);
+	SCENEMANAGER->addScene("Å¸ÀÌÆ²¾À", new titleScene);
+	
+	SCENEMANAGER->changeScene("Å¸ÀÌÆ²¾À");
 
 
 	
@@ -50,8 +55,6 @@ void playGround::render(void)
 {
 	PatBlt(getMemDC(), 0, 0, WINSIZEX, WINSIZEY, WHITENESS);
 	//================== ÀÌ À§´Â ¼Õ´ëÁö ¸¶½Ã¿À =========================
-
-	IMAGEMANAGER->findImage("¹ÙÅÁ")->render(getMemDC(),0,0);
 	
 	SCENEMANAGER->render();
 	
