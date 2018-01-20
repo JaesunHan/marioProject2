@@ -20,6 +20,8 @@ HRESULT gameScene::init()
 	_EM = new enemyManager;
 	_EM->init();
 
+	
+
 	return S_OK;
 }
 
