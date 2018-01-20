@@ -177,9 +177,6 @@
     <ClCompile Include="gameScene.cpp">
       <Filter>playGround\gameScene</Filter>
     </ClCompile>
-    <ClCompile Include="playGround+collision.cpp">
-      <Filter>playGround</Filter>
-    </ClCompile>
     <ClCompile Include="enemyManager.cpp">
       <Filter>playGround\enemy</Filter>
     </ClCompile>

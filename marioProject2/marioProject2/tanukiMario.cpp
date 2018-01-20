@@ -13,7 +13,6 @@ tanukiMario::~tanukiMario()
 
 HRESULT tanukiMario::init()
 {
-	IMAGEMANAGER->addFrameImage("tanukiMarioIdleImage", ".\\image\\tanukiMarioIdle.bmp", 126, 270, 1, 2, true, RGB(255, 0, 255));
 	return S_OK;
 }
 
@@ -29,5 +28,5 @@ void tanukiMario::update()
 
 void tanukiMario::render() 
 {
-
+	IMAGEMANAGER->findImage("tanukiMarioIdleImage")->frameRender(getMemDC(), _playerX, _playerY, _currentFrameX, _directionNum);
 }
