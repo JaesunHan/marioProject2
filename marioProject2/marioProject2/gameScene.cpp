@@ -44,3 +44,8 @@ void gameScene::render()
 	_EM->render();
 	_player->render();
 }
+
+void gameScene::collision(void)
+{
+	
+}

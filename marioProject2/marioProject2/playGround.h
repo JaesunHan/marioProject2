@@ -19,7 +19,6 @@ public:
 	virtual void render(void);		//그려주는 함수
 
 	void addImage(void);
-	void collision(void);
 
 	playGround();
 	~playGround();

@@ -12,6 +12,8 @@ public:
 	gameScene();
 	~gameScene();
 
+	void collision(void);
+
 	HRESULT init();
 	void release();
 	void update();
