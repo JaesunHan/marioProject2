@@ -73,6 +73,9 @@
     <Filter Include="playGround\player">
       <UniqueIdentifier>{ec4bcdf2-0dc2-4217-b506-377e055603d1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="playGround\gameScene">
+      <UniqueIdentifier>{c9515322-caac-4924-b7ad-cf350d9e4f5f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -99,25 +102,7 @@
     <ClCompile Include="pixelCollision.cpp">
       <Filter>playGround\pixelCollision</Filter>
     </ClCompile>
-    <ClCompile Include="battle.cpp">
-      <Filter>playGround\starScene</Filter>
-    </ClCompile>
-    <ClCompile Include="battle2.cpp">
-      <Filter>playGround\starScene</Filter>
-    </ClCompile>
     <ClCompile Include="selectScene.cpp">
-      <Filter>playGround\starScene</Filter>
-    </ClCompile>
-    <ClCompile Include="ship.cpp">
-      <Filter>playGround\starScene</Filter>
-    </ClCompile>
-    <ClCompile Include="starcraftScene.cpp">
-      <Filter>playGround\starScene</Filter>
-    </ClCompile>
-    <ClCompile Include="shipManager.cpp">
-      <Filter>playGround\starScene</Filter>
-    </ClCompile>
-    <ClCompile Include="space.cpp">
       <Filter>playGround\starScene</Filter>
     </ClCompile>
     <ClCompile Include="gameNode.cpp">
@@ -189,6 +174,15 @@
     <ClCompile Include="enemyWiggle.cpp">
       <Filter>playGround\enemy</Filter>
     </ClCompile>
+    <ClCompile Include="gameScene.cpp">
+      <Filter>playGround\gameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyManager.cpp">
+      <Filter>playGround\enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="basicMario.cpp">
+      <Filter>playGround\player</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="randomFunction.h">
@@ -242,25 +236,7 @@
     <ClInclude Include="pixelCollision.h">
       <Filter>playGround\pixelCollision</Filter>
     </ClInclude>
-    <ClInclude Include="battle.h">
-      <Filter>playGround\starScene</Filter>
-    </ClInclude>
-    <ClInclude Include="battle2.h">
-      <Filter>playGround\starScene</Filter>
-    </ClInclude>
     <ClInclude Include="selectScene.h">
-      <Filter>playGround\starScene</Filter>
-    </ClInclude>
-    <ClInclude Include="ship.h">
-      <Filter>playGround\starScene</Filter>
-    </ClInclude>
-    <ClInclude Include="starcraftScene.h">
-      <Filter>playGround\starScene</Filter>
-    </ClInclude>
-    <ClInclude Include="shipManager.h">
-      <Filter>playGround\starScene</Filter>
-    </ClInclude>
-    <ClInclude Include="space.h">
       <Filter>playGround\starScene</Filter>
     </ClInclude>
     <ClInclude Include="gameNode.h">
@@ -334,6 +310,15 @@
     </ClInclude>
     <ClInclude Include="enemyWiggle.h">
       <Filter>playGround\enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScene.h">
+      <Filter>playGround\gameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyManager.h">
+      <Filter>playGround\enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="basicMario.h">
+      <Filter>playGround\player</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

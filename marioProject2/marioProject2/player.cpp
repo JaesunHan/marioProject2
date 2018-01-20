@@ -16,7 +16,9 @@ HRESULT player::init()
 	return S_OK;
 }
 
-HRESULT player::init(const char * imageName, float x, float y, PLAYERTYPE playerType)
+
+
+HRESULT player::init(string imgKey, char* imgFileName, float x, float y, int totalWidth, int totalHeight, int frameNumX, int frameNumY, PLAYERTYPE playerType)
 {
 	_currentFrameX = _currentFrameY = 0;				//프레임 관리
 	_count = 0;											//프레임 돌리기 위한 카운트
@@ -26,8 +28,8 @@ HRESULT player::init(const char * imageName, float x, float y, PLAYERTYPE player
 	_playerY = y;										//플레이어 y좌표
 	_probeY = 0;										//플레이어 바닥 프로브
 
-	_imageName = IMAGEMANAGER->findImage(imageName);
-	_imageName->setCenter(x, y);
+	_imageName = IMAGEMANAGER->addFrameImage(imgKey, imgFileName, totalWidth, totalHeight, frameNumX, frameNumY, true, RGB(255, 0, 255));
+	_imageName->setCenter(_playerX, _playerY);
 
 
 	//플레이어렉트
@@ -93,7 +95,7 @@ void player::playerFrameControl()
 
 void player::move()
 {
-
+	KeyControl();
 }
 
 void player::KeyControl()

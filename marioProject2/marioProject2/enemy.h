@@ -1,5 +1,17 @@
 #pragma once
 #include "gameNode.h"
+enum ENEMYSTATUS
+{
+	ENEMYIDLE,
+	ENEMYWALK
+
+};
+enum ENEMYDIRECTION
+{
+	ENEMYLEFT,
+	ENEMYRIGHT
+};
+
 class enemy : public gameNode
 {
 protected:
@@ -9,6 +21,10 @@ protected:
 	image* _img;
 	animation* _anim;
 	RECT _rc;
+	float _angle, _spd;
+	ENEMYSTATUS	_status;
+	ENEMYDIRECTION _direction;
+
 
 	int _width, _height;
 
