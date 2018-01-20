@@ -169,6 +169,7 @@
     <ClCompile Include="space.cpp" />
     <ClCompile Include="starcraftScene.cpp" />
     <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="tanukiMario.cpp" />
     <ClCompile Include="timeManager.cpp" />
     <ClCompile Include="timer.cpp" />
     <ClCompile Include="titleScene.cpp" />
@@ -217,6 +218,7 @@
     <ClInclude Include="space.h" />
     <ClInclude Include="starcraftScene.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="tanukiMario.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="timeManager.h" />
     <ClInclude Include="timer.h" />
