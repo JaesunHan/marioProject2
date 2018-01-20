@@ -157,6 +157,7 @@
     <ClCompile Include="iniDataManager.cpp" />
     <ClCompile Include="keyManager.cpp" />
     <ClCompile Include="pixelCollision.cpp" />
+    <ClCompile Include="player.cpp" />
     <ClCompile Include="playGround+addImage.cpp" />
     <ClCompile Include="playGround.cpp" />
     <ClCompile Include="progressBar.cpp" />
@@ -202,6 +203,7 @@
     <ClInclude Include="iniDataManager.h" />
     <ClInclude Include="keyManager.h" />
     <ClInclude Include="pixelCollision.h" />
+    <ClInclude Include="player.h" />
     <ClInclude Include="playGround.h" />
     <ClInclude Include="progressBar.h" />
     <ClInclude Include="randomFunction.h" />
