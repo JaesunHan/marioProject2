@@ -183,6 +183,9 @@
     <ClCompile Include="player.cpp">
       <Filter>playGround\player</Filter>
     </ClCompile>
+    <ClCompile Include="tanukiMario.cpp">
+      <Filter>playGround\player</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="randomFunction.h">
@@ -321,6 +324,9 @@
       <Filter>playGround\enemy</Filter>
     </ClInclude>
     <ClInclude Include="player.h">
+      <Filter>playGround\player</Filter>
+    </ClInclude>
+    <ClInclude Include="tanukiMario.h">
       <Filter>playGround\player</Filter>
     </ClInclude>
   </ItemGroup>
