@@ -9,7 +9,7 @@ public:
 	void update();
 	void release();
 	//void render();
-	void draw();
+	void draw(HDC hdc);
 
 	enemyWiggle();
 	~enemyWiggle();
