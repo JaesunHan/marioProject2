@@ -14,18 +14,20 @@ titleScene::~titleScene(void)
 
 HRESULT titleScene::init()
 {
-
 	return S_OK;
 }
 void titleScene::release()
 {
 
 }
-void titleScene::update() 
+void titleScene::update()
 {
-
+	if(KEYMANAGER->isOnceKeyDown(VK_RETURN))
+	{
+		SCENEMANAGER->changeScene("¼¿·ºÆ®¾À");
+	}
 }
 void titleScene::render() 
 {
-	IMAGEMANAGER->findImage("titleBackGround")->render(getMemDC(),0,0);
+	IMAGEMANAGER->findImage("backGround(title)")->render(getMemDC(),0,0);
 }

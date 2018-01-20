@@ -66,7 +66,7 @@ void selectScene::render()
 
 void selectScene::cbSceneChange()
 {
-	SCENEMANAGER->changeScene("½ºÅ¸¾À");
+	//SCENEMANAGER->changeScene("½ºÅ¸¾À");
 }
 
 void selectScene::cbAngleUp()

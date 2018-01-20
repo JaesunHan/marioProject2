@@ -13,7 +13,7 @@ void playGround::addImage()
 	IMAGEMANAGER->addFrameImage("¹öÆ°", "button.bmp", 0, 0, 122, 62, 1, 2, true, RGB(255, 0, 255));
 	
 
-	IMAGEMANAGER->addImage("backGround(title)", "backGround(titleScene).bmp", WINSIZEX, WINSIZEY, false, RGB(255, 0, 255));
+	IMAGEMANAGER->addImage("backGround(title)", "backGround(title).bmp", WINSIZEX, WINSIZEY, false, RGB(255, 0, 255));
 
 
 
