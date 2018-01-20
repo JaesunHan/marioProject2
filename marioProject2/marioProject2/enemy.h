@@ -2,7 +2,7 @@
 #include "gameNode.h"
 class enemy : public gameNode
 {
-private:
+protected:
 	//중점 좌표
 	float _x, _y;
 	//적 이미지
