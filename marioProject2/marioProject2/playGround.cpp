@@ -16,6 +16,7 @@ HRESULT playGround::init()
 {
 	gameNode::init(true);
 	_select = new selectScene;
+	addImage();
 	
 	SCENEMANAGER->addScene("¼¿·ºÆ®¾À", _select);
 	SCENEMANAGER->addScene("½ºÅ¸¾À", new starcraftScene);
