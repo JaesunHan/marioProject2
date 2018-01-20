@@ -15,8 +15,8 @@ selectScene::~selectScene()
 HRESULT selectScene::init()
 {
 	//======================================================================================================= 마리오1
-	_Mario1.img = IMAGEMANAGER->findImage("shovelKnightSelect");
-	_Mario1.x = 200;
+	_Mario1.img = IMAGEMANAGER->findImage("mario1");
+	_Mario1.x = 220;
 	_Mario1.y = 500;
 	_Mario1.rc = RectMake(_Mario1.x, _Mario1.y, _Mario1.img->getFrameWidth(), _Mario1.img->getFrameHeight());
 	_Mario1.ani = new animation;
@@ -28,8 +28,8 @@ HRESULT selectScene::init()
 	//=======================================================================================================
 
 	//======================================================================================================= 마리오2
-	_Mario2.img = IMAGEMANAGER->findImage("shovelKnightSelect");
-	_Mario2.x = 400;
+	_Mario2.img = IMAGEMANAGER->findImage("mario2");
+	_Mario2.x = 420;
 	_Mario2.y = 500;
 	_Mario2.rc = RectMake(_Mario2.x, _Mario2.y, _Mario2.img->getFrameWidth(), _Mario2.img->getFrameHeight());
 	_Mario2.ani = new animation;
@@ -41,8 +41,8 @@ HRESULT selectScene::init()
 	//=======================================================================================================
 
 	//======================================================================================================= 마리오3
-	_Mario3.img = IMAGEMANAGER->findImage("shovelKnightSelect");
-	_Mario3.x = 600;
+	_Mario3.img = IMAGEMANAGER->findImage("mario3");
+	_Mario3.x = 620;
 	_Mario3.y = 500;
 	_Mario3.rc = RectMake(_Mario3.x, _Mario3.y, _Mario3.img->getFrameWidth(), _Mario3.img->getFrameHeight());
 	_Mario3.ani = new animation;
@@ -52,6 +52,9 @@ HRESULT selectScene::init()
 	_Mario3.ani->setPlayFrame(mario3AniArray, 1, false);
 	_Mario3.ani->setFPS(1);
 	//=======================================================================================================
+
+	//선택된 캐릭터를 저장할 변수
+	_selectPlayer = SELECT_MARIO1;
 
 	return S_OK;
 }
@@ -77,6 +80,7 @@ void selectScene::update()
 		//이미지 체인지
 		int tanukiAniArray[] = { 1 };
 		_Mario1.ani->setPlayFrame(tanukiAniArray, 1, false);
+		_selectPlayer = SELECT_MARIO1;
 
 		if (KEYMANAGER->isOnceKeyDown(VK_LBUTTON))
 		{
@@ -99,6 +103,7 @@ void selectScene::update()
 		//이미지 체인지
 		int tanukiAniArray[] = { 1 };
 		_Mario2.ani->setPlayFrame(tanukiAniArray, 1, false);
+		_selectPlayer = SELECT_MARIO2;
 
 		if (KEYMANAGER->isOnceKeyDown(VK_LBUTTON))
 		{
@@ -121,9 +126,10 @@ void selectScene::update()
 		//이미지 체인지
 		int tanukiAniArray[] = { 1 };
 		_Mario3.ani->setPlayFrame(tanukiAniArray, 1, false);
+		_selectPlayer = SELECT_MARIO3;
 
 		if (KEYMANAGER->isOnceKeyDown(VK_LBUTTON))
-		{
+		{	
 			SCENEMANAGER->changeScene("게임씬");
 		}
 	}
@@ -166,6 +172,9 @@ void selectScene::render()
 	_Mario3.img->aniRender(getMemDC(), _Mario3.x, _Mario3.y, _Mario3.ani);
 	//===========================================================================================================
 
+
+	//=========================================================================================================== 테스트 출력
+	testRender(getMemDC(), "_selectPlayer: ", VK_TAB, _selectPlayer, 10, 100);
 }
 
 

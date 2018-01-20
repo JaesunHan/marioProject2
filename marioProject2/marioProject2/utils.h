@@ -15,4 +15,13 @@ namespace HEPTA_UTIL
 
 	float getAngle(float x1, float y1, float x2, float y2);
 
+
+
+	//========================================================================== 테스트 렌더 
+
+	// 테스트값 출력:        변수명      토글키값 변수값(flaot) 출력좌표x,y
+	void testRender(HDC hdc, char* name, int key, float value, int x, int y);
+	// 테스트값 출력:        변수명      토글키값 변수값(char)     출력좌표x,y
+	void testRender(HDC hdc, char* name, int key, char* valueName, int x, int y);
+
 }

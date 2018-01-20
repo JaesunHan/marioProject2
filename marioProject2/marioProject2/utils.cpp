@@ -29,4 +29,28 @@ namespace HEPTA_UTIL
 
 		return angle;
 	}
+
+	//========================================================================================== 테스트 렌더
+	// 테스트값 출력:        변수명      토글키값 변수값(flaot) 출력좌표x,y
+	void testRender(HDC hdc, char* name, int key, float value, int x, int y)
+	{
+		if (KEYMANAGER->isToggleKey(key))
+		{
+			char str[128];
+			sprintf(str, "%s : %2.2f", name, value);
+			TextOut(hdc, x, y, str, strlen(str));
+		}
+	}
+
+	// 테스트값 출력:        변수명      토글키값 변수값(char)     출력좌표x,y
+	void testRender(HDC hdc, char* name, int key, char* valueName, int x, int y)
+	{
+		if (KEYMANAGER->isToggleKey(key))
+		{
+			char str[128];
+			sprintf(str, "%s : %s", name, valueName);
+			TextOut(hdc, x, y, str, strlen(str));
+
+		}
+	}
 }

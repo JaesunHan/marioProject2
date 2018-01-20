@@ -63,7 +63,7 @@ protected:
 	float _gravity;				//중력... 그런데 중력을 플레이어에서 주는게 아니라 월드에서 줘야하는거 같은데..
 	float _jumpPower;			//점프파워 
 
-								///////////////이넘문 구분용///////////////
+								            ///////////////이넘문 구분용///////////////
 
 	PLAYERTYPE _typeNum;					//플레이어 타입 구분용
 	PLAYERDIRECTION _directionNum;			//플레이어 방향 구분용
