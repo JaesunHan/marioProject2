@@ -19,6 +19,7 @@ HRESULT playGround::init()
 
 	SCENEMANAGER->addScene("ºø∑∫∆Ææ¿", new selectScene);
 	SCENEMANAGER->addScene("≈∏¿Ã∆≤æ¿", new titleScene);
+	SCENEMANAGER->addScene("∞‘¿”æ¿", new gameScene);
 	
 	SCENEMANAGER->changeScene("≈∏¿Ã∆≤æ¿");
 

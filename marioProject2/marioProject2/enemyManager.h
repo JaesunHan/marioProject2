@@ -15,7 +15,7 @@ public:
 
 
 
-	enemy();
-	~enemy();
+	enemyManager();
+	~enemyManager();
 };
 

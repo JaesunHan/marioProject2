@@ -3,12 +3,12 @@
 
 
 
-enemyManager::enemy()
+enemyManager::enemyManager()
 {
 
 }
 
-enemyManager::~enemy()
+enemyManager::~enemyManager()
 {
 
 }
@@ -17,6 +17,7 @@ HRESULT enemyManager::init()
 {
 	_wiggle = new enemyWiggle;
 	_wiggle->init();
+	return S_OK;
 }
 
 void enemyManager::update()
