@@ -15,16 +15,24 @@ enemyWiggle::~enemyWiggle()
 
 HRESULT enemyWiggle::init()	   
 {
-	_x = WINSIZEX / 2;
-	_y = WINSIZEY - 200;
-	enemy::init("enemyWiggle", "./image/Wiggler.bmp", _x, _y, 720, 90, 4, 1);
 	
+	enemy::init("enemyWiggle", "./image/Wiggler.bmp", WINSIZEX/2, WINSIZEY-250, 720, 180, 4, 2);
+	_angle = PI;
+	_spd = 2.0f;
+	
+	_direction = ENEMYLEFT;
+	_status = ENEMYIDLE;
+
 	return S_OK;
 }
 void enemyWiggle::update()	   
 {
 	enemy::update();
-	if (KEYMANAGER->isOnceKeyDown('S'))	enemy::startAnim();
+	if (KEYMANAGER->isOnceKeyDown('S')) {
+		enemy::startAnim();
+		_status = ENEMYWALK;
+	}
+
 }
 void enemyWiggle::release()	   
 {
