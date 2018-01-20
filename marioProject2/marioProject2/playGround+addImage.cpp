@@ -4,19 +4,14 @@
 void playGround::addImage()
 {
 	
-	IMAGEMANAGER->addImage("바탕", "우주.bmp", WINSIZEX, WINSIZEY, false, RGB(255, 0, 255));
-	IMAGEMANAGER->addFrameImage("battle", "battle.bmp", 0, 0, 1536, 79, 16, 1, true, RGB(255, 0, 255));
-	IMAGEMANAGER->addFrameImage("battle2", "battle.bmp", 0, 0, 1536, 79, 16, 1, true, RGB(255, 0, 255));
 
-	IMAGEMANAGER->addImage("bullet", "bullet.bmp", 21, 21, true, RGB(255, 0, 255));
-	IMAGEMANAGER->addFrameImage("missilePF", "missilePF.bmp", 0, 0, 576, 44, 16, 1, true, RGB(255, 0, 255));
-	IMAGEMANAGER->addFrameImage("버튼", "button.bmp", 0, 0, 122, 62, 1, 2, true, RGB(255, 0, 255));
 	
 
 	IMAGEMANAGER->addImage("backGround(title)", ".//image//backGround(title).bmp", WINSIZEX, WINSIZEY, false, RGB(255, 0, 255));
 
 
-
-
+	//캐릭터 선택창
+	IMAGEMANAGER->addImage("선택창", ".//image//characterSelect.bmp", 0, 0, 960, 720, true, RGB(255, 0, 255));
+	IMAGEMANAGER->addFrameImage("shovelKnightSelect", ".//image//shovelKnightSelect.bmp", 260, 134, 2, 1, true, RGB(255, 0, 255));
 
 }
