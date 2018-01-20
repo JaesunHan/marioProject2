@@ -25,7 +25,7 @@ void titleScene::update()
 {
 	if(KEYMANAGER->isOnceKeyDown(VK_RETURN))
 	{
-		SCENEMANAGER->changeScene("°ÔÀÓ¾À");
+		SCENEMANAGER->changeScene("¼¿·ºÆ®¾À");
 	}
 }
 void titleScene::render() 

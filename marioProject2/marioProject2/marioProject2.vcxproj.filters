@@ -180,9 +180,6 @@
     <ClCompile Include="enemyManager.cpp">
       <Filter>playGround\enemy</Filter>
     </ClCompile>
-    <ClCompile Include="basicMario.cpp">
-      <Filter>playGround\player</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="randomFunction.h">
@@ -316,9 +313,6 @@
     </ClInclude>
     <ClInclude Include="enemyManager.h">
       <Filter>playGround\enemy</Filter>
-    </ClInclude>
-    <ClInclude Include="basicMario.h">
-      <Filter>playGround\player</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

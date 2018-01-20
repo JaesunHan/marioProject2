@@ -80,7 +80,7 @@ void selectScene::update()
 
 		if (KEYMANAGER->isOnceKeyDown(VK_LBUTTON))
 		{
-			SCENEMANAGER->changeScene("≈∏¿Ã∆≤æ¿");
+			SCENEMANAGER->changeScene("∞‘¿”æ¿");
 		}
 	}
 	//=============================================================
@@ -102,7 +102,7 @@ void selectScene::update()
 
 		if (KEYMANAGER->isOnceKeyDown(VK_LBUTTON))
 		{
-			SCENEMANAGER->changeScene("≈∏¿Ã∆≤æ¿");
+			SCENEMANAGER->changeScene("∞‘¿”æ¿");
 		}
 	}
 	//=============================================================
@@ -124,7 +124,7 @@ void selectScene::update()
 
 		if (KEYMANAGER->isOnceKeyDown(VK_LBUTTON))
 		{
-			SCENEMANAGER->changeScene("≈∏¿Ã∆≤æ¿");
+			SCENEMANAGER->changeScene("∞‘¿”æ¿");
 		}
 	}
 	//=============================================================
