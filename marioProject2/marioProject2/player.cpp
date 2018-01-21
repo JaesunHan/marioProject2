@@ -28,12 +28,14 @@ HRESULT player::init(string imgKey, char* imgFileName, float x, float y, int tot
 	_playerY = y;										//플레이어 y좌표
 	_probeY = 0;										//플레이어 바닥 프로브
 
-	_imageName = IMAGEMANAGER->addFrameImage(imgKey, imgFileName, totalWidth, totalHeight, frameNumX, frameNumY, true, RGB(255, 0, 255));
-	_imageName->setCenter(_playerX, _playerY);
+	_imageName = imgKey;
+	IMAGEMANAGER->findImage(_imageName)->setCenter(_playerX, _playerY);
+	CAMERAMANAGER->setCameraXY(_playerX, _playerY);
+	
 
 
 	//플레이어렉트
-	_playerRc = RectMakeCenter(_playerX, _playerY, _imageName->getFrameWidth(), _imageName->getFrameHeight());
+	_playerRc = RectMakeCenter(_playerX, _playerY, IMAGEMANAGER->findImage(_imageName)->getFrameWidth(), IMAGEMANAGER->findImage(_imageName)->getFrameHeight());
 
 	_probeX = _playerRc.left;		// 플레이어 렉트의 left로 검출 
 	_probeY = _playerRc.top;		// 플레이어 렉트의 top으로 검출
@@ -87,9 +89,9 @@ void player::playerFrameControl()
 {
 	if (_count % 5 == 0)
 	{
-		_imageName->setFrameX(_currentFrameX);
+		IMAGEMANAGER->findImage(_imageName)->setFrameX(_currentFrameX);
 		_currentFrameX++;
-		if (_currentFrameX >= _imageName->getMaxFrameX())
+		if (_currentFrameX >= IMAGEMANAGER->findImage(_imageName)->getMaxFrameX())
 			_currentFrameX = 0;
 
 		_count = 0;
@@ -145,7 +147,7 @@ void player::playerJump()
 
 void player::draw()
 {
-	_imageName->frameRender(getMemDC(), _playerRc.left, _playerRc.top, _currentFrameX, _currentFrameY);
+	CAMERAMANAGER->frameRender(_imageName, getMemDC(), _playerRc.left, _playerRc.top, _currentFrameX, _currentFrameY);
 }
 
 void player::imageControl()

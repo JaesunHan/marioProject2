@@ -23,10 +23,12 @@ void tanukiMario::release()
 
 void tanukiMario::update() 
 {
-
+	KeyControl();
 }
 
 void tanukiMario::render() 
 {
-	IMAGEMANAGER->findImage("tanukiMarioIdleImage")->frameRender(getMemDC(), _playerX, _playerY, _currentFrameX, _directionNum);
+	//IMAGEMANAGER->findImage("tanukiMarioIdleImage")->frameRender(getMemDC(), _playerX, _playerY, _currentFrameX, _directionNum);
+	IMAGEMANAGER->frameRender("tanukiMarioIdleImage", getMemDC(), _playerX, _playerY, _currentFrameX, _directionNum);
+
 }

@@ -46,7 +46,7 @@ class player : public gameNode
 protected:
 
 
-	image * _imageName;			//이미지 등록용
+	string _imageName;			//이미지 등록용
 	RECT _playerRc;				//이미지 렉트용
 	float _playerX;				//플레이어 x
 	float _playerY;				//플레이어 y
@@ -62,8 +62,8 @@ protected:
 	float _angle;				//앵글
 	float _gravity;				//중력... 그런데 중력을 플레이어에서 주는게 아니라 월드에서 줘야하는거 같은데..
 	float _jumpPower;			//점프파워 
-								
-								
+
+
 	///////////////이넘문 구분용///////////////
 
 	PLAYERTYPE _typeNum;					//플레이어 타입 구분용
@@ -102,16 +102,23 @@ public:
 	inline RECT getRect() { return _playerRc; }							//렉트 반환용 겟함수
 	inline int getPlayerProbeY() { return _probeY; }					//충돌검출 Y좌표 겟함수
 	inline int getPlayerProbeX() { return _probeX; }					//충돌검출 X좌표 겟함수
-	inline int getJumpPower() { return _jumpPower; }					//점프파워 겟함수
-	inline int getX() { return _playerX; }								//플레이어 겟X
-	inline int getY() { return _playerY; }								//플레이어 겟Y
+	inline float getJumpPower() { return _jumpPower; }					//점프파워 겟함수
+	inline float getX() { return _playerX; }								//플레이어 겟X
+	inline float getY() { return _playerY; }								//플레이어 겟Y
 	inline int getPlayerWhere() { return _whereNum; }					//플레이어 겟where
 	inline int getPlayerStatus() { return _statusNum; }					//플레이어 겟스테이터스	
 	inline int getPlayerType() { return _typeNum; }						//플레이어 겟타입  베이직마리오니?
 	inline int getPlayerDirection() { return _directionNum; }			//플레이어 겟다이렉션 오른쪽이니 왼쪽이니?
 
-	
+
+
+
 	void setProbeX(int probeX) { _probeX = probeX; }					//셋터 프로브X
 	void setProbeY(int probeY) { _probeY = probeY; }					//셋터 프로브Y
+	void setPlayerX(float playerX) { _playerX = playerX; }
+	void setPlayerY(float playerY) { _playerY = playerY; }
+	void setJumpPower(float jumpPower) { _jumpPower = jumpPower; }
+	void setStatusNum(PLAYERSTATUS statusNum) { _statusNum = statusNum; }
+	void setWhereNum(PLAYERWHERE whereNum) { _whereNum = whereNum; }
 
 };
