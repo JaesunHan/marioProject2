@@ -7,12 +7,13 @@
 class elements
 {
 public:
-	const char* name;
-	int currentHP;
-	int maxHP;
-	float angle;
-	float accelaration;
-	float maxSpeed;
+	//const char* name;
+	//int currentHP;
+	//int maxHP;
+	//float angle;
+	//float accelaration;
+	//float maxSpeed;
+	int selectNum;
 
 	elements() {};
 	~elements() {};
@@ -31,6 +32,7 @@ private:
 private:
 	arrElement _mTotalElement;
 	float _angle;
+	int _characterNum;
 
 public:
 	HRESULT init();
@@ -42,14 +44,16 @@ public:
 	elements* getElementData(string str) { return _mTotalElement.find(str)->second; }
 
 	//¼³Á¤ÀÚ
-	void setElementDataCurrentHP(string str, float ch);
-	void setElementDataMaxHP(string str, float mh);
-	void setElementDataAngle(string str, float a);
-	void setElementDataAccelaration(string str, float accel);
-	void setElementDataMaxSpeed(string str, float ms);
+	//void setElementDataCurrentHP(string str, float ch);
+	//void setElementDataMaxHP(string str, float mh);
+	//void setElementDataAngle(string str, float a);
+	//void setElementDataAccelaration(string str, float accel);
+	//void setElementDataMaxSpeed(string str, float ms);
 
 	void setAngle(float angle) { _angle = angle; }
 	float getAngle() { return _angle; }
+	int getChNum() { return _characterNum; }
+
 
 	database();
 	~database();
