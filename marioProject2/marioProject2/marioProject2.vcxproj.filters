@@ -40,9 +40,6 @@
     <Filter Include="2DGameFramework\button">
       <UniqueIdentifier>{3ee1af64-5526-467c-a59a-37723f09cf4a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="2DGameFramework\effect">
-      <UniqueIdentifier>{bf790a84-b364-48d3-afd4-e1d65bd433ef}</UniqueIdentifier>
-    </Filter>
     <Filter Include="2DGameFramework\image">
       <UniqueIdentifier>{25967eca-e830-448e-9fb0-47c87f73a82f}</UniqueIdentifier>
     </Filter>
@@ -76,11 +73,14 @@
     <Filter Include="playGround\gameScene">
       <UniqueIdentifier>{6134ca60-3064-4a67-b5ee-ed57fc3e5400}</UniqueIdentifier>
     </Filter>
+    <Filter Include="헤더 파일\정리">
+      <UniqueIdentifier>{333948fc-a914-4b26-a760-e2853b77f5b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DGameFramework\effect">
+      <UniqueIdentifier>{bf790a84-b364-48d3-afd4-e1d65bd433ef}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="winMain.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -183,39 +183,21 @@
     <ClCompile Include="playGround+sound.cpp">
       <Filter>playGround</Filter>
     </ClCompile>
+    <ClCompile Include="TTUtils.cpp">
+      <Filter>2DGameFramework\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="shovelMario.cpp">
+      <Filter>playGround\player</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="randomFunction.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Resource.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="stdafx.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="inc\fmod.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="inc\fmod.hpp">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="inc\fmod_codec.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="inc\fmod_dsp.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="inc\fmod_errors.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="inc\fmod_memoryinfo.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="inc\fmod_output.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="commonMacroFunction.h">
@@ -316,6 +298,39 @@
     </ClInclude>
     <ClInclude Include="gameScene.h">
       <Filter>playGround\gameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\fmod.h">
+      <Filter>헤더 파일\정리</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\fmod.hpp">
+      <Filter>헤더 파일\정리</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\fmod_codec.h">
+      <Filter>헤더 파일\정리</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\fmod_errors.h">
+      <Filter>헤더 파일\정리</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\fmod_dsp.h">
+      <Filter>헤더 파일\정리</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\fmod_memoryinfo.h">
+      <Filter>헤더 파일\정리</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\fmod_output.h">
+      <Filter>헤더 파일\정리</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>헤더 파일\정리</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>헤더 파일\정리</Filter>
+    </ClInclude>
+    <ClInclude Include="TTUtils.h">
+      <Filter>2DGameFramework\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="shovelMario.h">
+      <Filter>playGround\player</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

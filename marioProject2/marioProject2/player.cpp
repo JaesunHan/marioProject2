@@ -24,8 +24,8 @@ HRESULT player::init(string imgKey, char* imgFileName, float x, float y, int tot
 	_count = 0;											//프레임 돌리기 위한 카운트
 	_typeNum = playerType; 								//플레이어 타입 받장
 
-	_playerX = x;										//플레이어 x좌표
-	_playerY = y;										//플레이어 y좌표
+	_playerX = 285;										//플레이어 x좌표
+	_playerY = 1190;										//플레이어 y좌표
 	_probeY = 0;										//플레이어 바닥 프로브
 
 	_imageName = imgKey;
@@ -52,7 +52,7 @@ HRESULT player::init(string imgKey, char* imgFileName, float x, float y, int tot
 	_jumpPower = 3.0f;						//점프파워
 
 
-											//////상태 불값///////
+								//////상태 불값///////
 	_isRight = true;			//오른쪽 보고 있니?
 	_isIdle = true;				//대기상태
 	_isJump = false;			//점프상태니?	
@@ -78,11 +78,16 @@ void player::update()
 	//move();
 
 	_playerRc = RectMake(_playerX - 35, _playerY - 135, 70, 135);
+	//CAMERAMANAGER->getX();
+
 }
 
 void player::render()
 {
 	draw();
+	TTTextOut(getMemDC(), 200, 10, "x", _ptMouse.x+CAMERAMANAGER->getX());
+	TTTextOut(getMemDC(), 200, 28, "x", _ptMouse.y + CAMERAMANAGER->getY());
+
 }
 
 void player::playerFrameControl()
@@ -154,9 +159,8 @@ void player::draw()
 	CAMERAMANAGER->frameRender(_imageName, getMemDC(), _playerRc.left, _playerRc.top, _currentFrameX, _currentFrameY);
 }
 
-void player::imageControl()
+image* player::imageControl()
 {
-
 	//이미지 컨트롤용 스위치 케이스문
 	//각 케이스별의 이미지를 넣어주면 됩니다.
 	//_imageName = IMAGEMANAGER->findImage("이미지명") 사용으로 각 케이스별의 이미지를 주면 될거 같습니다.
@@ -178,5 +182,6 @@ void player::imageControl()
 	case RUN:
 		break;
 	}
+	return NULL;
 }
 

@@ -21,15 +21,16 @@ void basicMario::release()
 
 void basicMario::update()
 {
-	KeyControl();
+	player::update();
 }
 
 void basicMario::render()
 {
-	IMAGEMANAGER->findImage("베이직마리오대기_우")->frameRender(getMemDC(), _playerX, _playerY, _currentFrameX, _directionNum);
+	player::render();
+	//IMAGEMANAGER->findImage("베이직마리오대기_우")->frameRender(getMemDC(), _playerX, _playerY, _currentFrameX, _directionNum);
 }
 
-void basicMario::imageControl()
+image* basicMario::imageControl()
 {
 
 	//이미지 컨트롤용 스위치 케이스문
@@ -47,57 +48,30 @@ void basicMario::imageControl()
 			 //IMAGEMANAGER->addFrameImage("베이직마리오점프_우", "./image/mario_basic_jump_right.bmp", 83, 135, 1, 1, true, RGB(255, 0, 255));
 
 		_imageName = "베이직마리오대기_우";
-		if (_count % 5 == 0)
-		{
-			IMAGEMANAGER->findImage(_imageName)->setFrameX(_currentFrameX);
-			_currentFrameX++;
-			if (_currentFrameX >= IMAGEMANAGER->findImage(_imageName)->getMaxFrameX())
-				_currentFrameX = 0;
+		return IMAGEMANAGER->findImage(_imageName);
 
-			_count = 0;
-		}
 		break;
 
 	case IDLE:
 		_imageName="베이직마리오대기_우";
-		if (_count % 5 == 0)
-		{
-			IMAGEMANAGER->findImage(_imageName)->setFrameX(_currentFrameX);
-			_currentFrameX++;
-			if (_currentFrameX >= IMAGEMANAGER->findImage(_imageName)->getMaxFrameX())
-				_currentFrameX = 0;
+		return IMAGEMANAGER->findImage(_imageName);
 
-			_count = 0;
-		}
 		break;
 
 	case JUMP:
 		_imageName ="베이직마리오점프_우";
-		if (_count % 5 == 0)
-		{
-			IMAGEMANAGER->findImage(_imageName)->setFrameX(_currentFrameX);
-			_currentFrameX++;
-			if (_currentFrameX >= IMAGEMANAGER->findImage(_imageName)->getMaxFrameX())
-				_currentFrameX = 0;
+		return IMAGEMANAGER->findImage(_imageName);
 
-			_count = 0;
-		}
 		break;
 
 	case MOVE:
 		_imageName = "베이직마리오무브_우";
-		if (_count % 5 == 0)
-		{
-			IMAGEMANAGER->findImage(_imageName)->setFrameX(_currentFrameX);
-			_currentFrameX++;
-			if (_currentFrameX >= IMAGEMANAGER->findImage(_imageName)->getMaxFrameX())
-				_currentFrameX = 0;
+		return IMAGEMANAGER->findImage(_imageName);
 
-			_count = 0;
-		}
 		break;
 
 	case RUN://베이직마리오는 런 없습니당..........흐규흐규
 		break;
 	}
+	return NULL;
 }
