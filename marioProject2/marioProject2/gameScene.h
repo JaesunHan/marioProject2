@@ -2,10 +2,13 @@
 #include "gameNode.h"
 #include "enemyManager.h"
 #include "tanukiMario.h"
+#include "basicMario.h"
+
 class gameScene : public gameNode
 {
 private:
-	player * _player;
+	player* _player;
+	player* _basicMario;
 	enemyManager* _EM;
 	
 public:

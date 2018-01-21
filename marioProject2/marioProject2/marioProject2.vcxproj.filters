@@ -16,9 +16,6 @@
     <Filter Include="playGround">
       <UniqueIdentifier>{cd08991a-ac72-45fb-aee0-75ec2a320f05}</UniqueIdentifier>
     </Filter>
-    <Filter Include="playGround\bullets">
-      <UniqueIdentifier>{3c1dc872-67dd-44bc-aad5-01dca8a9c2e0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="playGround\database">
       <UniqueIdentifier>{9fad01d5-19f9-4b55-a762-bf59e343c5b4}</UniqueIdentifier>
     </Filter>
@@ -84,17 +81,11 @@
     <ClCompile Include="winMain.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="animationTest.cpp">
-      <Filter>playGround</Filter>
-    </ClCompile>
     <ClCompile Include="playGround.cpp">
       <Filter>playGround</Filter>
     </ClCompile>
     <ClCompile Include="playGround+addImage.cpp">
       <Filter>playGround</Filter>
-    </ClCompile>
-    <ClCompile Include="bullets.cpp">
-      <Filter>playGround\bullets</Filter>
     </ClCompile>
     <ClCompile Include="database.cpp">
       <Filter>playGround\database</Filter>
@@ -221,14 +212,8 @@
     <ClInclude Include="commonMacroFunction.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="animationTest.h">
-      <Filter>playGround</Filter>
-    </ClInclude>
     <ClInclude Include="playGround.h">
       <Filter>playGround</Filter>
-    </ClInclude>
-    <ClInclude Include="bullets.h">
-      <Filter>playGround\bullets</Filter>
     </ClInclude>
     <ClInclude Include="database.h">
       <Filter>playGround\database</Filter>

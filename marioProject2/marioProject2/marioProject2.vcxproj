@@ -141,9 +141,7 @@
   <ItemGroup>
     <ClCompile Include="action.cpp" />
     <ClCompile Include="animation.cpp" />
-    <ClCompile Include="animationTest.cpp" />
     <ClCompile Include="basicMario.cpp" />
-    <ClCompile Include="bullets.cpp" />
     <ClCompile Include="button.cpp" />
     <ClCompile Include="collision.cpp" />
     <ClCompile Include="database.cpp" />
@@ -178,9 +176,7 @@
   <ItemGroup>
     <ClInclude Include="action.h" />
     <ClInclude Include="animation.h" />
-    <ClInclude Include="animationTest.h" />
     <ClInclude Include="basicMario.h" />
-    <ClInclude Include="bullets.h" />
     <ClInclude Include="button.h" />
     <ClInclude Include="collision.h" />
     <ClInclude Include="commonMacroFunction.h" />
