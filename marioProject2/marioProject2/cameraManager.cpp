@@ -97,6 +97,23 @@ void cameraManager::setCameraXY(float x, float y)
 {
 	_camX = x - WINSIZEX / 2;
 	_camY = y - WINSIZEY / 2;
+
+	if (_camX < 0)
+	{
+		_camX = 0;
+	}
+	if (_camX > _bg->getWidth() - WINSIZEX)
+	{
+		_camX = _bg->getWidth() - WINSIZEX;
+	}
+	if (_camY < 0)
+	{
+		_camY = 0;
+	}
+	if (_camY > _bg->getHeight() - WINSIZEY)
+	{
+		_camY = _bg->getHeight() - WINSIZEY;
+	}
 }
 
 void cameraManager::plusCamX(float& playerX, float addX)

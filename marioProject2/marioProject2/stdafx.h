@@ -54,6 +54,9 @@ using namespace HEPTA_UTIL;
 #define INIDATA			iniDataManager::getSingleton()
 #define DATABASE		database::getSingleton()
 
+#include "TTUtils.h"
+using namespace 트윈테일쟝;
+
 //=======================================================
 // ## 매크로 ## 2017.11.15 ##
 //=======================================================
