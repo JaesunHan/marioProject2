@@ -26,5 +26,15 @@ void playGround::addImage()
 	IMAGEMANAGER->addFrameImage("tanukiMarioJump", ".\\image\\tanukiMarioJump.bmp", 135, 270, 1, 2, true, RGB(255, 0, 255));
 	IMAGEMANAGER->addFrameImage("tanukiMarioRunning", ".\\image\\tanukiMarioRunning.bmp", 260, 270, 2, 2, true, RGB(255, 0, 255));
 
+	IMAGEMANAGER->addFrameImage("sKnightIdleL", ".\\image\\sKnightIdleL.bmp", 260, 134, 1, 1, true, RGB(255, 0, 255));
+	IMAGEMANAGER->addFrameImage("sKnightIdleR", ".\\image\\sKnightIdleR.bmp", 260, 134, 1, 1, true, RGB(255, 0, 255));
+	IMAGEMANAGER->addFrameImage("sKnightAttackL", ".\\image\\sKnightAttackL.bmp", 1035, 134, 5, 1, true, RGB(255, 0, 255));
+	IMAGEMANAGER->addFrameImage("sKnightAttackR", ".\\image\\sKnightAttackR.bmp", 1035, 134, 5, 1, true, RGB(255, 0, 255));
+	IMAGEMANAGER->addFrameImage("sKnightJumpL", ".\\image\\sKnightJumpL.bmp", 390, 134, 3, 1, true, RGB(255, 0, 255));
+	IMAGEMANAGER->addFrameImage("sKnightJumpR", ".\\image\\sKnightJumpR.bmp", 390, 134, 3, 1, true, RGB(255, 0, 255));
+	IMAGEMANAGER->addFrameImage("sKnightWalkL", ".\\image\\sKnightWalkL.bmp", 1200, 201, 6, 1, true, RGB(255, 0, 255));
+	IMAGEMANAGER->addFrameImage("sKnightWalkR", ".\\image\\sKnightWalkR.bmp", 1200, 201, 6, 1, true, RGB(255, 0, 255));
+
+
 
 }
