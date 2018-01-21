@@ -1,6 +1,7 @@
 #pragma once
 #include "gameNode.h"
 #include "enemyManager.h"
+#include "shovelMario.h"
 #include "tanukiMario.h"
 #include "basicMario.h"
 

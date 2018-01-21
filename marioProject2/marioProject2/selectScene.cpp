@@ -98,10 +98,7 @@ void selectScene::update()
 			SOUNDMANAGER->play("marioJump");
 		}
 
-		if (KEYMANAGER->isOnceKeyDown(VK_LBUTTON))
-		{
-			SCENEMANAGER->changeScene("∞‘¿”æ¿");
-		}
+		
 	}
 	//=============================================================
 
@@ -130,10 +127,7 @@ void selectScene::update()
 			SOUNDMANAGER->play("marioJump");
 		}
 
-		if (KEYMANAGER->isOnceKeyDown(VK_LBUTTON))
-		{
-			SCENEMANAGER->changeScene("∞‘¿”æ¿");
-		}
+
 	}
 	//=============================================================
 
@@ -161,10 +155,7 @@ void selectScene::update()
 			SOUNDMANAGER->play("marioJump");
 		}
 
-		if (KEYMANAGER->isOnceKeyDown(VK_LBUTTON))
-		{	
-			SCENEMANAGER->changeScene("∞‘¿”æ¿");
-		}
+
 	}
 	//=============================================================
 
@@ -174,6 +165,8 @@ void selectScene::update()
 	{
 		_selectSoundPlay = false;
 	}
+
+	saveTxt();
 }
 
 void selectScene::render() 
@@ -217,4 +210,53 @@ void selectScene::render()
 	testRender(getMemDC(), "_selectSoundPlay: ", VK_TAB, _selectSoundPlay, 10, 120);
 }
 
+void selectScene::saveTxt()
+{
+	if (KEYMANAGER->isOnceKeyDown(VK_LBUTTON))
+	{
+		switch (_selectPlayer)
+		{
+		case SELECT_NONE:
+			break;
+		case SELECT_MARIO1:
+		{
+			char temp[128];
+			vector<string> vStr;
+
+			vStr.push_back("«√∑π¿ÃæÓ");
+			vStr.push_back(itoa(1, temp, 10));
+
+			TXTDATA->txtSave("save22", vStr);
+
+			SCENEMANAGER->changeScene("∞‘¿”æ¿");
+		}
+			break;
+		case SELECT_MARIO2:
+		{
+			char temp[128];
+			vector<string> vStr;
+
+			vStr.push_back("«√∑π¿ÃæÓ");
+			vStr.push_back(itoa(2, temp, 10));
+
+			TXTDATA->txtSave("save22", vStr);
+			SCENEMANAGER->changeScene("∞‘¿”æ¿");
+
+		}
+			break;
+		case SELECT_MARIO3:
+		{
+			char temp[128];
+			vector<string> vStr;
+
+			vStr.push_back("«√∑π¿ÃæÓ");
+			vStr.push_back(itoa(3, temp, 10));
+			TXTDATA->txtSave("save22", vStr);
+
+			SCENEMANAGER->changeScene("∞‘¿”æ¿");
+		}
+			break;
+		}
+	}
+}
 

@@ -20,7 +20,17 @@ HRESULT gameScene::init()
 	CAMERAMANAGER->getBackGroundMemory(IMAGEMANAGER->findImage("게임씬백그라운드"));
 	_EM = new enemyManager;
 	_EM->init();
-	_player = new tanukiMario;
+	
+
+
+	if (DATABASE->getElementData("플레이어")->selectNum == 1);
+	{
+		_player = new shovelMario;
+	}
+	if (DATABASE->getElementData("플레이어")->selectNum == 2);
+	if (DATABASE->getElementData("플레이어")->selectNum == 3);
+
+
 
 	_player->init("tanukiMarioIdle", ".\\image\\tanukiMarioIdle.bmp", 285, 1190, 126, 270, 1, 2, TANUKI);
 
@@ -72,7 +82,7 @@ void gameScene::collision(void)
 	// 플레이어가 위에서 아래로 떨어질 때
 	if (_player->getJumpPower() <= 0)
 	{
-		for (int i = 0; i < 100; ++i)
+		for (int i = 0; i < _player->getJumpPower() * (-1) + 1; i += 5)
 		{
 			color1 = GetPixel(hdc, _player->getRect().right, _player->getRect().bottom + i);
 			if (!isMazen(color1))
@@ -144,7 +154,7 @@ void gameScene::collision(void)
 		}
 	}
 	// 플레이어가 좌우 벽에 부딪힐 때
-	color1 = GetPixel(hdc, _player->getRect().right + 1, _player->getRect().bottom - 3);
+	color1 = GetPixel(hdc, _player->getRect().right + 1, _player->getRect().bottom);
 	color2 = GetPixel(hdc, _player->getRect().right + 1, _player->getRect().top);
 	color3 = GetPixel(hdc, _player->getRect().right + 1, (_player->getRect().top + _player->getRect().bottom) / 2);
 	if (isMazen(color1) && isMazen(color2) && isMazen(color3))
@@ -152,14 +162,14 @@ void gameScene::collision(void)
 		_player->setPlayerRtBlock(false);
 	}
 	else _player->setPlayerRtBlock(true);
-	color1 = GetPixel(hdc, _player->getRect().left - 1, _player->getRect().bottom - 3);
+	color1 = GetPixel(hdc, _player->getRect().left - 1, _player->getRect().bottom);
 	color2 = GetPixel(hdc, _player->getRect().left - 1, _player->getRect().top);
 	color3 = GetPixel(hdc, _player->getRect().left - 1, (_player->getRect().top + _player->getRect().bottom) / 2);
 	if (isMazen(color1) && isMazen(color2) && isMazen(color3))
 	{
-		_player->setPlayerLtBlock(false);
+		_player->setPlayerRtBlock(false);
 	}
-	else _player->setPlayerLtBlock(true);
+	else _player->setPlayerRtBlock(true);
 }
 
 bool gameScene::isMazen(COLORREF color)

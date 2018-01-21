@@ -16,7 +16,13 @@ HRESULT database::init()
 {
 	_angle = 0;
 
-	loadDatabase("database.txt");
+	/*loadDatabase("database.txt");*/
+
+	loadDatabase("save22.txt");
+	
+
+
+
 
 	return S_OK;
 }
@@ -45,55 +51,57 @@ void database::loadDatabase(string name)
 
 			_mTotalElement.insert(pair<string, elements*>(vTemp[i + 1], em));
 
-			if (i != 0) count += 7;
+			if (i != 0) count += 1;
 			continue;
 		}
 
 		iterElement mIter = _mTotalElement.find(str);
 
-		if (i == count + 1) mIter->second->name = vTemp[i].c_str();
+		if (i == count+1) mIter->second->selectNum = atoi(vTemp[i].c_str());
+
+		/*if (i == count + 1) mIter->second->name = vTemp[i].c_str();
 		else if (i == count + 2) mIter->second->currentHP = atoi(vTemp[i].c_str());
 		else if (i == count + 3) mIter->second->maxHP = atoi(vTemp[i].c_str());
 		else if (i == count + 4) mIter->second->angle = (float)atof(vTemp[i].c_str());
 		else if (i == count + 5) mIter->second->maxSpeed = (float)atof(vTemp[i].c_str());
-		else if (i == count + 6) mIter->second->accelaration = (float)atof(vTemp[i].c_str());
+		else if (i == count + 6) mIter->second->accelaration = (float)atof(vTemp[i].c_str());*/
 	}
 
 	vTemp.clear();
 }
 
 
-void database::setElementDataCurrentHP(string str, float ch)	  
-{
-	iterElement mIter = _mTotalElement.find(str);
-
-	mIter->second->currentHP = ch;
-}
-
-void database::setElementDataMaxHP(string str, float mh)		  
-{
-	iterElement mIter = _mTotalElement.find(str);
-
-	mIter->second->maxHP = mh;
-}
-
-void database::setElementDataAngle(string str, float a)			  
-{
-	iterElement mIter = _mTotalElement.find(str);
-
-	mIter->second->angle = a;
-}
-
-void database::setElementDataAccelaration(string str, float accel)
-{
-	iterElement mIter = _mTotalElement.find(str);
-
-	mIter->second->accelaration = accel;
-}
-
-void database::setElementDataMaxSpeed(string str, float ms)
-{
-	iterElement mIter = _mTotalElement.find(str);
-
-	mIter->second->maxSpeed = ms;
-}
+//void database::setElementDataCurrentHP(string str, float ch)	  
+//{
+//	iterElement mIter = _mTotalElement.find(str);
+//
+//	mIter->second->currentHP = ch;
+//}
+//
+//void database::setElementDataMaxHP(string str, float mh)		  
+//{
+//	iterElement mIter = _mTotalElement.find(str);
+//
+//	mIter->second->maxHP = mh;
+//}
+//
+//void database::setElementDataAngle(string str, float a)			  
+//{
+//	iterElement mIter = _mTotalElement.find(str);
+//
+//	mIter->second->angle = a;
+//}
+//
+//void database::setElementDataAccelaration(string str, float accel)
+//{
+//	iterElement mIter = _mTotalElement.find(str);
+//
+//	mIter->second->accelaration = accel;
+//}
+//
+//void database::setElementDataMaxSpeed(string str, float ms)
+//{
+//	iterElement mIter = _mTotalElement.find(str);
+//
+//	mIter->second->maxSpeed = ms;
+//}
