@@ -47,5 +47,12 @@ void gameScene::render()
 
 void gameScene::collision(void)
 {
-	
+	if (_player->getJumpPower() < 0)
+	{
+
+	}
+	for (int i = 0; i < (_player->getJumpPower() * (-1) + 1); ++i)
+	{
+
+	}
 }
