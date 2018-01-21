@@ -23,7 +23,7 @@
     <ProjectGuid>{4080CAB6-631F-4559-BED9-7E5B0FF8F523}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>marioProject2</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -165,6 +165,7 @@
     <ClCompile Include="progressBar.cpp" />
     <ClCompile Include="sceneManager.cpp" />
     <ClCompile Include="selectScene.cpp" />
+    <ClCompile Include="shovelMario.cpp" />
     <ClCompile Include="soundManager.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="tanukiMario.cpp" />
@@ -210,6 +211,7 @@
     <ClInclude Include="Resource.h" />
     <ClInclude Include="sceneManager.h" />
     <ClInclude Include="selectScene.h" />
+    <ClInclude Include="shovelMario.h" />
     <ClInclude Include="singletonBase.h" />
     <ClInclude Include="soundManager.h" />
     <ClInclude Include="stdafx.h" />
