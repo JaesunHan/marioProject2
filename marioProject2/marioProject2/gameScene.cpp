@@ -72,7 +72,7 @@ void gameScene::collision(void)
 	// 플레이어가 위에서 아래로 떨어질 때
 	if (_player->getJumpPower() <= 0)
 	{
-		for (int i = 0; i < _player->getJumpPower() * (-1) + 1; i += 5)
+		for (int i = 0; i < 100; ++i)
 		{
 			color1 = GetPixel(hdc, _player->getRect().right, _player->getRect().bottom + i);
 			if (!isMazen(color1))
@@ -144,7 +144,7 @@ void gameScene::collision(void)
 		}
 	}
 	// 플레이어가 좌우 벽에 부딪힐 때
-	color1 = GetPixel(hdc, _player->getRect().right + 1, _player->getRect().bottom);
+	color1 = GetPixel(hdc, _player->getRect().right + 1, _player->getRect().bottom - 3);
 	color2 = GetPixel(hdc, _player->getRect().right + 1, _player->getRect().top);
 	color3 = GetPixel(hdc, _player->getRect().right + 1, (_player->getRect().top + _player->getRect().bottom) / 2);
 	if (isMazen(color1) && isMazen(color2) && isMazen(color3))
@@ -152,14 +152,14 @@ void gameScene::collision(void)
 		_player->setPlayerRtBlock(false);
 	}
 	else _player->setPlayerRtBlock(true);
-	color1 = GetPixel(hdc, _player->getRect().left - 1, _player->getRect().bottom);
+	color1 = GetPixel(hdc, _player->getRect().left - 1, _player->getRect().bottom - 3);
 	color2 = GetPixel(hdc, _player->getRect().left - 1, _player->getRect().top);
 	color3 = GetPixel(hdc, _player->getRect().left - 1, (_player->getRect().top + _player->getRect().bottom) / 2);
 	if (isMazen(color1) && isMazen(color2) && isMazen(color3))
 	{
-		_player->setPlayerRtBlock(false);
+		_player->setPlayerLtBlock(false);
 	}
-	else _player->setPlayerRtBlock(true);
+	else _player->setPlayerLtBlock(true);
 }
 
 bool gameScene::isMazen(COLORREF color)
