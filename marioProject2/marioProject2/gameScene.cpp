@@ -145,17 +145,19 @@ void gameScene::collision(void)
 	color1 = GetPixel(hdc, _player->getRect().right + 1, _player->getRect().bottom);
 	color2 = GetPixel(hdc, _player->getRect().right + 1, _player->getRect().top);
 	color3 = GetPixel(hdc, _player->getRect().right + 1, (_player->getRect().top + _player->getRect().bottom) / 2);
-	if (!isMazen(color1) || !isMazen(color2) || !isMazen(color3))
+	if (isMazen(color1) && isMazen(color2) && isMazen(color3))
 	{
-		_player->setPlayerRtBlock(true);
+		_player->setPlayerRtBlock(false);
 	}
+	else _player->setPlayerRtBlock(true);
 	color1 = GetPixel(hdc, _player->getRect().left - 1, _player->getRect().bottom);
 	color2 = GetPixel(hdc, _player->getRect().left - 1, _player->getRect().top);
 	color3 = GetPixel(hdc, _player->getRect().left - 1, (_player->getRect().top + _player->getRect().bottom) / 2);
-	if (!isMazen(color1) || !isMazen(color2) || !isMazen(color3))
+	if (isMazen(color1) && isMazen(color2) && isMazen(color3))
 	{
-		_player->setPlayerLtBlock(true);
+		_player->setPlayerRtBlock(false);
 	}
+	else _player->setPlayerRtBlock(true);
 }
 
 bool gameScene::isMazen(COLORREF color)
