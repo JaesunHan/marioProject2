@@ -28,6 +28,7 @@ protected:
 	ENEMYSTATUS	_status;
 	ENEMYDIRECTION _direction;
 	RECT _icanseeyou;
+	RECT _moveArea;
 
 	string _imgKeyString;
 	int _width, _height;

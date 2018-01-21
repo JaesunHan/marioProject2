@@ -15,7 +15,7 @@ enemyWiggle::~enemyWiggle()
 
 HRESULT enemyWiggle::init()	   
 {
-	enemy::init("enemyWiggle", "./image/Wiggler.bmp", WINSIZEX/2, WINSIZEY-250, 720, 180, 4, 2);
+	enemy::init("enemyWiggle", "./image/Wiggler.bmp", WINSIZEX/2, 1190, 720, 180, 4, 2);
 	_angle = PI;
 	_spd = 1.6f;
 	
@@ -46,4 +46,5 @@ void enemyWiggle::draw(HDC hdc)
 	}
 	//_img->aniRender(hdc, _x, _y, _anim);
 	CAMERAMANAGER->aniRender(_imgKeyString, hdc, _x, _y, _anim);
+	
 }
