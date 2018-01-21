@@ -2,6 +2,7 @@
 #include "gameNode.h"
 #include "enemyWiggle.h"
 
+class player;
 class enemyManager : public gameNode
 {
 private:

@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "enemyWiggle.h"
-
+#include "player.h"
 
 
 enemyWiggle::enemyWiggle()
@@ -28,11 +28,12 @@ HRESULT enemyWiggle::init()
 void enemyWiggle::update()	   
 {
 	enemy::update();
+	
 	if (KEYMANAGER->isOnceKeyDown('S')) {
 		enemy::startAnim();
 		_status = ENEMYWALK;
 	}
-
+	
 }
 void enemyWiggle::release()	   
 {
@@ -41,6 +42,9 @@ void enemyWiggle::release()
 
 void enemyWiggle::draw(HDC hdc)
 {
-	
+	if (KEYMANAGER->isStayKeyDown('G'))
+	{
+		Rectangle(hdc, _icanseeyou.left, _icanseeyou.top, _icanseeyou.right, _icanseeyou.bottom);
+	}
 	_img->aniRender(hdc, _x, _y, _anim);
 }
