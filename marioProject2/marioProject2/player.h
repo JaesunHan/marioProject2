@@ -9,6 +9,8 @@ enum PLAYERSTATUS
 	JUMP,
 	MOVE,
 	RUN,
+	ATTACK,
+	SKILL,
 	ENDSTATUS
 };
 

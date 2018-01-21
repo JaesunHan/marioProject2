@@ -9,7 +9,7 @@ private:
 
 public:
 	image* imageControl();
-
+	void playerFrameControl();
 
 	shovelMario();
 	~shovelMario();

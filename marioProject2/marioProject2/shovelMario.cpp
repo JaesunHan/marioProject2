@@ -72,9 +72,118 @@ image* shovelMario::imageControl()
 			}
 		break;
 
+		case ATTACK:
+			if (_directionNum == RIGHT)
+			{
+				_imageName = "sKnightAttackR";
+				return IMAGEMANAGER->findImage(_imageName);
+			}
+			else if (_directionNum == LEFT)
+			{
+				_imageName = "sKnightAttackL";
+				return IMAGEMANAGER->findImage(_imageName);
+			}
+		break;
+
+		case SKILL:
+			if (_directionNum == RIGHT)
+			{
+				//_imageName = "sKnightWalkR";
+				//return IMAGEMANAGER->findImage(_imageName);
+			}
+			else if (_directionNum == LEFT)
+			{
+				//_imageName = "sKnightWalkL";
+				//return IMAGEMANAGER->findImage(_imageName);
+			}
+		break;
+
 		case RUN:
 			return NULL;
 		break;
 	} 
 	return NULL;
+}
+
+
+void shovelMario::playerFrameControl()
+{
+	switch (_statusNum)
+	{
+		default: //IDLE상태이미지 디폴트로 
+			if (_count % 5 == 0)
+			{
+				IMAGEMANAGER->findImage(_imageName)->setFrameX(_currentFrameX);
+				_currentFrameX++;
+				if (_currentFrameX >= IMAGEMANAGER->findImage(_imageName)->getMaxFrameX())
+					_currentFrameX = 0;
+
+				_count = 0;
+			}
+		break;
+
+		case IDLE:
+			if (_count % 5 == 0)
+			{
+				IMAGEMANAGER->findImage(_imageName)->setFrameX(_currentFrameX);
+				_currentFrameX++;
+				if (_currentFrameX >= IMAGEMANAGER->findImage(_imageName)->getMaxFrameX())
+					_currentFrameX = 0;
+
+				_count = 0;
+			}
+		break;
+
+		case JUMP:
+			if (_count % 5 == 0)
+			{
+				IMAGEMANAGER->findImage(_imageName)->setFrameX(_currentFrameX);
+				_currentFrameX++;
+				if (_currentFrameX >= IMAGEMANAGER->findImage(_imageName)->getMaxFrameX() - 1)
+					_currentFrameX = 0;
+
+				_count = 0;
+			}
+		break;
+
+		case MOVE:
+			if (_count % 5 == 0)
+			{
+				IMAGEMANAGER->findImage(_imageName)->setFrameX(_currentFrameX);
+				_currentFrameX++;
+				if (_currentFrameX >= IMAGEMANAGER->findImage(_imageName)->getMaxFrameX())
+					_currentFrameX = 0;
+
+				_count = 0;
+			}
+		break;
+
+		case ATTACK:
+			if (_count % 5 == 0)
+			{
+				IMAGEMANAGER->findImage(_imageName)->setFrameX(_currentFrameX);
+				_currentFrameX++;
+				if (_currentFrameX >= IMAGEMANAGER->findImage(_imageName)->getMaxFrameX())
+					_currentFrameX = 0;
+
+				_count = 0;
+			}
+		break;
+
+		case SKILL:
+			if (_count % 5 == 0)
+			{
+				IMAGEMANAGER->findImage(_imageName)->setFrameX(_currentFrameX);
+				_currentFrameX++;
+				if (_currentFrameX >= IMAGEMANAGER->findImage(_imageName)->getMaxFrameX())
+					_currentFrameX = 0;
+
+				_count = 0;
+			}
+		break;
+
+		case RUN:
+		
+		break;
+	}
 }
