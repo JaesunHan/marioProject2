@@ -159,9 +159,6 @@
     <ClCompile Include="enemy.cpp">
       <Filter>playGround\enemy</Filter>
     </ClCompile>
-    <ClCompile Include="player.cpp">
-      <Filter>playGround\player</Filter>
-    </ClCompile>
     <ClCompile Include="tanukiMario.cpp">
       <Filter>playGround\player</Filter>
     </ClCompile>
@@ -177,9 +174,6 @@
     <ClCompile Include="basicMario.cpp">
       <Filter>playGround\player</Filter>
     </ClCompile>
-    <ClCompile Include="gameScene.cpp">
-      <Filter>playGround\gameScene</Filter>
-    </ClCompile>
     <ClCompile Include="playGround+sound.cpp">
       <Filter>playGround</Filter>
     </ClCompile>
@@ -190,6 +184,12 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="shovelMario.cpp">
+      <Filter>playGround\player</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScene.cpp">
+      <Filter>playGround\gameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="player.cpp">
       <Filter>playGround\player</Filter>
     </ClCompile>
   </ItemGroup>
@@ -278,9 +278,6 @@
     <ClInclude Include="enemy.h">
       <Filter>playGround\enemy</Filter>
     </ClInclude>
-    <ClInclude Include="player.h">
-      <Filter>playGround\player</Filter>
-    </ClInclude>
     <ClInclude Include="tanukiMario.h">
       <Filter>playGround\player</Filter>
     </ClInclude>
@@ -295,9 +292,6 @@
     </ClInclude>
     <ClInclude Include="basicMario.h">
       <Filter>playGround\player</Filter>
-    </ClInclude>
-    <ClInclude Include="gameScene.h">
-      <Filter>playGround\gameScene</Filter>
     </ClInclude>
     <ClInclude Include="inc\fmod.h">
       <Filter>헤더 파일\정리</Filter>
@@ -330,6 +324,12 @@
       <Filter>2DGameFramework\utils</Filter>
     </ClInclude>
     <ClInclude Include="shovelMario.h">
+      <Filter>playGround\player</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScene.h">
+      <Filter>playGround\gameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
       <Filter>playGround\player</Filter>
     </ClInclude>
   </ItemGroup>
