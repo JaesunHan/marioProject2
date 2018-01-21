@@ -21,9 +21,23 @@ HRESULT gameScene::init()
 	_EM->init();
 	_player = new tanukiMario;
 	_player->init("tanukiMarioIdleImage", ".\\image\\tanukiMarioIdle.bmp", 100, 535, 126, 270, 1, 2, TANUKI);
+<<<<<<< HEAD
+	
+	_basicMario = new basicMario;
+
+=======
 	_EM->setPlayer(_player);
 
+<<<<<<< HEAD
 	CAMERAMANAGER->getBackGroundMemory(IMAGEMANAGER->findImage("게임씬백그라운드"));
+=======
+	//입장 효과음
+	SOUNDMANAGER->play("menuEnter");
+
+	//BGM play
+	SOUNDMANAGER->play("BGM", 0.5f);
+>>>>>>> 18fb4a36626db6e49bbcff0e41ef32ad2a4bc4fb
+>>>>>>> 9a828e3f89c7374d9c87f610bc2da65d21a0a4c2
 
 	return S_OK;
 }

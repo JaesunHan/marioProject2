@@ -15,6 +15,7 @@ struct tagPlayer
 //선택된 캐릭터
 enum PLAYER_SELETCT
 {
+	SELECT_NONE,
 	SELECT_MARIO1,
 	SELECT_MARIO2,
 	SELECT_MARIO3
@@ -29,7 +30,7 @@ private:
 	tagPlayer _Mario3;  //마리오3
 
 	int _selectPlayer;   //선택된 캐릭터 상태
-
+	bool _selectSoundPlay;
 
 
 
