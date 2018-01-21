@@ -21,7 +21,6 @@ HRESULT gameScene::init()
 	_EM = new enemyManager;
 	_EM->init();
 	_player = new tanukiMario;
-
 	_player->init("tanukiMarioIdle", ".\\image\\tanukiMarioIdle.bmp", 285, 1190, 126, 270, 1, 2, TANUKI);
 
 	_EM->setPlayer(_player);
@@ -53,6 +52,7 @@ void gameScene::update()
 	_EM->update();
 	_player->update();
 	collision();
+	CAMERAMANAGER->update(_player->getX(), _player->getY());
 }
 
 void gameScene::render() 

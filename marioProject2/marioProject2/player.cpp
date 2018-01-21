@@ -30,7 +30,7 @@ HRESULT player::init(string imgKey, char* imgFileName, float x, float y, int tot
 
 	_imageName = imgKey;
 	IMAGEMANAGER->findImage(_imageName)->setCenter(_playerX, _playerY);
-	CAMERAMANAGER->setCameraXY(_playerX, _playerY);
+	CAMERAMANAGER->init(_playerX, _playerY);
 	
 
 
@@ -114,15 +114,15 @@ void player::KeyControl()
 	{//왼쪽
 		_statusNum = MOVE;
 
-		CAMERAMANAGER->plusCamX(_playerX, -_speed);
-		//_playerX -= _speed;
+		//CAMERAMANAGER->plusCamX(_playerX, -_speed);
+		_playerX -= _speed;
 
 	}
 	if (KEYMANAGER->isStayKeyDown('D'))
 	{//오른쪽
 		_statusNum = MOVE;
-		CAMERAMANAGER->plusCamX(_playerX, +_speed);
-		//_playerX += _speed;
+		//CAMERAMANAGER->plusCamX(_playerX, +_speed);
+		_playerX += _speed;
 
 	}
 	if (KEYMANAGER->isStayKeyDown('W'))
@@ -133,13 +133,13 @@ void player::KeyControl()
 	 //	_whereNum = OFFLAND;
 	 //	_isJump = true;
 	 //}
-		CAMERAMANAGER->plusCamY(_playerY, -_speed);
-		//_playerY -= _speed;
+		//CAMERAMANAGER->plusCamY(_playerY, -_speed);
+		_playerY -= _speed;
 	}
 	if (KEYMANAGER->isStayKeyDown('S'))
 	{//아래
-		CAMERAMANAGER->plusCamY(_playerY, +_speed);
-		//_playerY += _speed;
+		//CAMERAMANAGER->plusCamY(_playerY, +_speed);
+		_playerY += _speed;
 
 	}
 

@@ -92,11 +92,37 @@ void cameraManager::aniRender(string strKey, HDC hdc, int destX, int destY, anim
 	if (img) img->aniRender(hdc, destX - _camX, destY - _camY, ani);
 }
 
-
-void cameraManager::setCameraXY(float x, float y)
+void cameraManager::update(float playerX, float playerY)
 {
-	_camX = x - WINSIZEX / 2;
-	_camY = y - WINSIZEY / 2;
+	float x = playerX - _camX - WINSIZEX / 2;
+	float y = playerY - _camY - WINSIZEY / 2;
+
+	_camX += x;
+	_camY += y;
+
+	if (_camX < 0)
+	{
+		_camX = 0;
+	}
+	if (_camX > _bg->getWidth() - WINSIZEX)
+	{
+		_camX = _bg->getWidth() - WINSIZEX;
+	}
+	if (_camY < 0)
+	{
+		_camY = 0;
+	}
+	if (_camY > _bg->getHeight() - WINSIZEY)
+	{
+		_camY = _bg->getHeight() - WINSIZEY;
+	}
+}
+
+
+void cameraManager::init(float playerX, float playerY)
+{
+	_camX = playerX - WINSIZEX / 2;
+	_camY = playerY - WINSIZEY / 2;
 
 	if (_camX < 0)
 	{
@@ -120,38 +146,22 @@ void cameraManager::plusCamX(float& playerX, float addX)
 {
 	playerX += addX;
 
-	if (WINSIZEX / 2 < playerX
-		&& _bg->getWidth() - WINSIZEX / 2 > playerX)
-	{
-		_camX += addX;
-	}
+	//if (WINSIZEX / 2 < playerX
+	//	&& _bg->getWidth() - WINSIZEX / 2 > playerX)
+	//{
+	//	_camX += addX;
+	//}
 
-	if (_camX < 0)
-	{
-		_camX = 0;
-	}
-	if (_camX > _bg->getWidth() - WINSIZEX)
-	{
-		_camX = _bg->getWidth() - WINSIZEX;
-	}
 }
 
 void cameraManager::plusCamY(float& playerY, float addY)
 {
 	playerY += addY;
 
-	if (WINSIZEY / 2 < playerY
-		&& _bg->getHeight() - WINSIZEY / 2 > playerY)
-	{
-		_camY += addY;
-	}
+	//if (WINSIZEY / 2 < playerY
+	//	&& _bg->getHeight() - WINSIZEY / 2 > playerY)
+	//{
+	//	_camY += addY;
+	//}
 
-	if (_camY < 0)
-	{
-		_camY = 0;
-	}
-	if (_camY > _bg->getHeight() - WINSIZEY)
-	{
-		_camY = _bg->getHeight() - WINSIZEY;
-	}
 }
