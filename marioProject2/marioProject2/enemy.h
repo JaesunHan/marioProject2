@@ -16,7 +16,7 @@ class player;
 class enemy : public gameNode
 {
 protected:
-	//중점 좌표
+	//레프트 탑 좌표
 	float _x, _y;
 	//적 이미지
 	image* _img;
@@ -27,6 +27,7 @@ protected:
 	ENEMYDIRECTION _direction;
 	RECT _icanseeyou;
 
+	string _imgKeyString;
 	int _width, _height;
 
 public:

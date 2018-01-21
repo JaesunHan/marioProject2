@@ -46,12 +46,12 @@ void basicMario::imageControl()
 			 //IMAGEMANAGER->addFrameImage("베이직마리오점프_좌", "./image/mario_basic_jump_left.bmp", 83, 135, 1, 1, true, RGB(255, 0, 255));
 			 //IMAGEMANAGER->addFrameImage("베이직마리오점프_우", "./image/mario_basic_jump_right.bmp", 83, 135, 1, 1, true, RGB(255, 0, 255));
 
-		_imageName = IMAGEMANAGER->findImage("베이직마리오대기_우");
+		_imageName = "베이직마리오대기_우";
 		if (_count % 5 == 0)
 		{
-			_imageName->setFrameX(_currentFrameX);
+			IMAGEMANAGER->findImage(_imageName)->setFrameX(_currentFrameX);
 			_currentFrameX++;
-			if (_currentFrameX >= _imageName->getMaxFrameX())
+			if (_currentFrameX >= IMAGEMANAGER->findImage(_imageName)->getMaxFrameX())
 				_currentFrameX = 0;
 
 			_count = 0;
@@ -59,12 +59,12 @@ void basicMario::imageControl()
 		break;
 
 	case IDLE:
-		_imageName = IMAGEMANAGER->findImage("베이직마리오대기_우");
+		_imageName="베이직마리오대기_우";
 		if (_count % 5 == 0)
 		{
-			_imageName->setFrameX(_currentFrameX);
+			IMAGEMANAGER->findImage(_imageName)->setFrameX(_currentFrameX);
 			_currentFrameX++;
-			if (_currentFrameX >= _imageName->getMaxFrameX())
+			if (_currentFrameX >= IMAGEMANAGER->findImage(_imageName)->getMaxFrameX())
 				_currentFrameX = 0;
 
 			_count = 0;
@@ -72,12 +72,12 @@ void basicMario::imageControl()
 		break;
 
 	case JUMP:
-		_imageName = IMAGEMANAGER->findImage("베이직마리오점프_우");
+		_imageName ="베이직마리오점프_우";
 		if (_count % 5 == 0)
 		{
-			_imageName->setFrameX(_currentFrameX);
+			IMAGEMANAGER->findImage(_imageName)->setFrameX(_currentFrameX);
 			_currentFrameX++;
-			if (_currentFrameX >= _imageName->getMaxFrameX())
+			if (_currentFrameX >= IMAGEMANAGER->findImage(_imageName)->getMaxFrameX())
 				_currentFrameX = 0;
 
 			_count = 0;
@@ -85,12 +85,12 @@ void basicMario::imageControl()
 		break;
 
 	case MOVE:
-		_imageName = IMAGEMANAGER->findImage("베이직마리오무브_우");
+		_imageName = "베이직마리오무브_우";
 		if (_count % 5 == 0)
 		{
-			_imageName->setFrameX(_currentFrameX);
+			IMAGEMANAGER->findImage(_imageName)->setFrameX(_currentFrameX);
 			_currentFrameX++;
-			if (_currentFrameX >= _imageName->getMaxFrameX())
+			if (_currentFrameX >= IMAGEMANAGER->findImage(_imageName)->getMaxFrameX())
 				_currentFrameX = 0;
 
 			_count = 0;

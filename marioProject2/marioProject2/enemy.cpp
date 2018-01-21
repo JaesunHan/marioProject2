@@ -19,6 +19,7 @@ HRESULT enemy::init(string imgKey, char* imgFileName, float x, float y, int tota
 	_img = IMAGEMANAGER->addFrameImage(imgKey, imgFileName, totalWidth, totalHeight, frameNumX, frameNumY, true, RGB(255, 0, 255));
 	_x = x;
 	_y = y;
+	_imgKeyString = imgKey;
 	_anim = new animation;
 	_anim->init(_img->getWidth(), _img->getHeight(), _img->getFrameWidth(), _img->getFrameHeight());
 	_anim->setDefPlayFrame(false, true);
@@ -37,10 +38,11 @@ void enemy::update()
 		//적이 걷는 상태이면
 		if (_status == ENEMYWALK) 
 		{
+			
 			//움직이기
 			_x += cosf(_angle)*_spd;
 			_y += -sinf(_angle)*_spd;
-
+			_icanseeyou = RectMakeCenter(_x + _img->getFrameWidth() / 2, _y + _img->getFrameHeight() / 2, _img->getFrameWidth() * 3, _img->getFrameHeight() * 1);
 			//방향에 따라 애니메이션의 플레이 셋 변경
 			switch (_direction)
 			{
@@ -88,7 +90,8 @@ void enemy::render()
 }
 void enemy::draw(HDC hdc)	 
 {
-	_img->aniRender(hdc, _x, _y, _anim);
+	//_img->aniRender(hdc, _x, _y, _anim);
+	CAMERAMANAGER->aniRender(_imgKeyString, hdc, _x, _y, _anim);
 }
 void enemy::startAnim()
 {
@@ -107,18 +110,32 @@ float enemy::followPlayer(player* p)
 		{
 			//방향은 왼쪽이므로 왼쪽으로 움직이는 그림을 출력해야됨
 			_direction = ENEMYLEFT;
+			//왼쪽으로 가다가 플레이어랑 부딪히면 오른쪽으로 밀어내기
+			if (_x <= p->getX() + (p->getRect().right - p->getRect().left))
+			{
+				_x = p->getX() + (p->getRect().right - p->getRect().left);
+			}
 		}
 		else
 		{
 			//방향은 오른쪽이므로 오른쪽으로 움직이는 그림을 출력해야됨
 			_direction = ENEMYRIGHT;
+			//오른쪽으로 가다가 플레이어랑 부딪히면 왼쪽으로 밀어내기
+			if (_x >= p->getX())
+			{
+				_x = p->getX();
+			}
+
 		}
 	}
 	//적의 시야안에 플레이어가 안들어와있으면
-	else 
-	{
-		_direction = ENEMYRIGHT;
-		_angle = PI2;
-	}
+	//else 
+	//{
+	//	_direction = ENEMYRIGHT;
+	//	_angle = PI2;
+	//}
+	
+
+
 	return _angle;
 }
