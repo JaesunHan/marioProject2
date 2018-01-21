@@ -20,7 +20,17 @@ HRESULT gameScene::init()
 	CAMERAMANAGER->getBackGroundMemory(IMAGEMANAGER->findImage("게임씬백그라운드"));
 	_EM = new enemyManager;
 	_EM->init();
-	_player = new tanukiMario;
+	
+
+
+	if (DATABASE->getElementData("플레이어")->selectNum == 1);
+	{
+		_player = new shovelMario;
+	}
+	if (DATABASE->getElementData("플레이어")->selectNum == 2);
+	if (DATABASE->getElementData("플레이어")->selectNum == 3);
+
+
 
 	_player->init("tanukiMarioIdle", ".\\image\\tanukiMarioIdle.bmp", 285, 1190, 126, 270, 1, 2, TANUKI);
 

@@ -39,7 +39,7 @@ public:
 	void release();
 	void update();
 	void render();
-
+	void saveTxt();
 	
 	//============================================================= Á¢±ÙÀÚ
 	inline int getSelectPlayer() { return _selectPlayer; }

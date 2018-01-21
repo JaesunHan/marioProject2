@@ -30,7 +30,7 @@ HRESULT player::init(string imgKey, char* imgFileName, float x, float y, int tot
 
 	_imageName = imgKey;
 	IMAGEMANAGER->findImage(_imageName)->setCenter(_playerX, _playerY);
-	CAMERAMANAGER->setCameraXY(_playerX, _playerY);
+	CAMERAMANAGER->init(_playerX, _playerY);
 	
 
 
@@ -48,7 +48,7 @@ HRESULT player::init(string imgKey, char* imgFileName, float x, float y, int tot
 	_speed = 3.0f;							//스피드
 	_countDead = 0;							//죽었는지 카운트
 	_angle = PI;							//횡스크롤이니까.. 180도
-	_gravity = 0.14f;						//중력값
+	_gravity = 1.4f;						//중력값
 	_jumpPower = 3.0f;						//점프파워
 
 
@@ -75,7 +75,7 @@ void player::update()
 
 	playerFrameControl();
 	KeyControl();
-	//move();
+	move();
 
 	_playerRc = RectMake(_playerX - 35, _playerY - 135, 70, 135);
 	//CAMERAMANAGER->getX();
@@ -85,8 +85,8 @@ void player::update()
 void player::render()
 {
 	draw();
-	TTTextOut(getMemDC(), 200, 10, "x", _ptMouse.x+CAMERAMANAGER->getX());
-	TTTextOut(getMemDC(), 200, 28, "x", _ptMouse.y + CAMERAMANAGER->getY());
+	TTTextOut(getMemDC(), 200, 10, "Mouse_X", _ptMouse.x + CAMERAMANAGER->getX());
+	TTTextOut(getMemDC(), 200, 28, "Mouse_Y", _ptMouse.y + CAMERAMANAGER->getY());
 
 }
 
@@ -105,7 +105,12 @@ void player::playerFrameControl()
 
 void player::move()
 {
-
+	if (_whereNum == OFFLAND)
+	{
+		_playerY -= _jumpPower;
+		_jumpPower -= _gravity;
+		CAMERAMANAGER->plusCamY(_playerY, -_jumpPower);
+	}
 }
 
 void player::KeyControl()
@@ -114,32 +119,63 @@ void player::KeyControl()
 	{//왼쪽
 		_statusNum = MOVE;
 
-		CAMERAMANAGER->plusCamX(_playerX, -_speed);
+
+		//CAMERAMANAGER->plusCamX(_playerX, -_speed);
+		_playerX -= _speed;
+
+		_RtBlock = false;
+		if (_LtBlock == false) CAMERAMANAGER->plusCamX(_playerX, -_speed);
 		//_playerX -= _speed;
+
 
 	}
 	if (KEYMANAGER->isStayKeyDown('D'))
 	{//오른쪽
 		_statusNum = MOVE;
-		CAMERAMANAGER->plusCamX(_playerX, +_speed);
-		//_playerX += _speed;
+
+		//CAMERAMANAGER->plusCamX(_playerX, +_speed);
+
+		_LtBlock = false;
+		if (_RtBlock == false) _playerX += _speed;
+
+		
 
 	}
-	if (KEYMANAGER->isStayKeyDown('W'))
+	if (KEYMANAGER->isOnceKeyDown('W'))
 	{//점프
+
+		if (_whereNum == ONLAND)
+		{
+			_statusNum = JUMP;
+			_whereNum = OFFLAND;
+			_isJump = true;
+			_jumpPower = 30;
+		}
+
+
 	 //_statusNum = JUMP;
 	 //if (_whereNum == ONLAND)
 	 //{
 	 //	_whereNum = OFFLAND;
 	 //	_isJump = true;
 	 //}
-		CAMERAMANAGER->plusCamY(_playerY, -_speed);
+
+		//CAMERAMANAGER->plusCamY(_playerY, -_speed);
 		_playerY -= _speed;
 	}
 	if (KEYMANAGER->isStayKeyDown('S'))
 	{//아래
-		CAMERAMANAGER->plusCamY(_playerY, +_speed);
-		//_playerY += _speed;
+		//CAMERAMANAGER->plusCamY(_playerY, +_speed);
+
+		//CAMERAMANAGER->plusCamY(_playerY, -_speed);
+		_playerY += _speed;
+
+	}
+	if (KEYMANAGER->isStayKeyDown('A'))
+	{//아래
+		//CAMERAMANAGER->plusCamY(_playerY, +_speed);
+
+		_playerX -= _speed;
 
 	}
 
