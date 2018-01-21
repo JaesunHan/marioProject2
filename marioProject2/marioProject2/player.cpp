@@ -85,8 +85,8 @@ void player::update()
 void player::render()
 {
 	draw();
-	TTTextOut(getMemDC(), 200, 10, "x", _ptMouse.x+CAMERAMANAGER->getX());
-	TTTextOut(getMemDC(), 200, 28, "x", _ptMouse.y + CAMERAMANAGER->getY());
+	TTTextOut(getMemDC(), 200, 10, "Mouse_X", _ptMouse.x + CAMERAMANAGER->getX());
+	TTTextOut(getMemDC(), 200, 28, "Mouse_Y", _ptMouse.y + CAMERAMANAGER->getY());
 
 }
 
@@ -134,7 +134,7 @@ void player::KeyControl()
 	 //	_isJump = true;
 	 //}
 		CAMERAMANAGER->plusCamY(_playerY, -_speed);
-		_playerY -= _speed;
+		//_playerY -= _speed;
 	}
 	if (KEYMANAGER->isStayKeyDown('S'))
 	{//¾Æ·¡
