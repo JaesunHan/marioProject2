@@ -186,13 +186,8 @@
     <ClCompile Include="playGround+sound.cpp">
       <Filter>playGround</Filter>
     </ClCompile>
-<<<<<<< HEAD
     <ClCompile Include="TTUtils.cpp">
       <Filter>2DGameFramework\utils</Filter>
-=======
-    <ClCompile Include="shovelMario.cpp">
-      <Filter>playGround\player</Filter>
->>>>>>> 8ddc94f064b2bf847bcc50b608d9fdc3942dfbf4
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -301,10 +296,6 @@
     <ClInclude Include="gameScene.h">
       <Filter>playGround\gameScene</Filter>
     </ClInclude>
-<<<<<<< HEAD
-    <ClInclude Include="shovelMario.h">
-      <Filter>playGround\player</Filter>
-=======
     <ClInclude Include="inc\fmod.h">
       <Filter>헤더 파일\정리</Filter>
     </ClInclude>
@@ -331,7 +322,6 @@
     </ClInclude>
     <ClInclude Include="targetver.h">
       <Filter>헤더 파일\정리</Filter>
->>>>>>> 752bef27e217aa9868a7ebafa6ce5274d8bb7eb3
     </ClInclude>
     <ClInclude Include="TTUtils.h">
       <Filter>2DGameFramework\utils</Filter>
