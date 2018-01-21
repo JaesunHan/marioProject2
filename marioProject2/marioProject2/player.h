@@ -69,7 +69,7 @@ protected:
 	PLAYERTYPE _typeNum;					//플레이어 타입 구분용
 	PLAYERDIRECTION _directionNum;			//플레이어 방향 구분용
 	PLAYERSTATUS _statusNum;				//플레이어 스테이터스 구분용
-	int _whereNum;							//플레이어 위치 구분용
+	PLAYERWHERE _whereNum;					//플레이어 위치 구분용
 
 	///////////////bool값 정리들///////////////
 
@@ -103,6 +103,12 @@ public:
 	inline int getPlayerProbeY() { return _probeY; }					//충돌검출 Y좌표 겟함수
 	inline int getPlayerProbeX() { return _probeX; }					//충돌검출 X좌표 겟함수
 	inline int getJumpPower() { return _jumpPower; }					//점프파워 겟함수
+	inline int getX() { return _playerX; }								//플레이어 겟X
+	inline int getY() { return _playerY; }								//플레이어 겟Y
+	inline int getPlayerWhere() { return _whereNum; }					//플레이어 겟where
+	inline int getPlayerStatus() { return _statusNum; }					//플레이어 겟스테이터스	
+	inline int getPlayerType() { return _typeNum; }						//플레이어 겟타입  베이직마리오니?
+	inline int getPlayerDirection() { return _directionNum; }			//플레이어 겟다이렉션 오른쪽이니 왼쪽이니?
 
 	
 	void setProbeX(int probeX) { _probeX = probeX; }					//셋터 프로브X
