@@ -25,7 +25,9 @@ HRESULT enemy::init(string imgKey, char* imgFileName, float x, float y, int tota
 	_anim->setDefPlayFrame(false, true);
 	_anim->setFPS(1);
 
+	_rc = RectMake(_x, _y, _img->getFrameWidth(), _img->getFrameHeight());
 	_icanseeyou = RectMakeCenter(_x+_img->getFrameWidth()/2, _y+_img->getFrameHeight()/2, _img->getFrameWidth() * 3, _img->getFrameHeight() * 1);
+	_moveArea = RectMakeCenter(_x + _img->getFrameWidth() / 2, _y + _img->getFrameHeight() / 2, WINSIZEX - 100, _img->getFrameHeight());
 
 	//적의 왼쪽위
 	_probe[0] = PointMake(_x, _y);
@@ -51,14 +53,14 @@ void enemy::update()
 			
 			//움직이기
 			_x += cosf(_angle)*_spd;
-			_y += -sinf(_angle)*_spd;
-			_icanseeyou = RectMakeCenter(_x + _img->getFrameWidth() / 2, _y + _img->getFrameHeight() / 2, _img->getFrameWidth() * 3, _img->getFrameHeight() * 1);
+			//_y += -sinf(_angle)*_spd;
+			
 			//방향에 따라 애니메이션의 플레이 셋 변경
 			switch (_direction)
 			{
 			//왼쪽으로 갈때
 			case ENEMYLEFT:
-				//_angle = PI;
+				
 				_anim->setPlayFrame((_img->getMaxFrameX() + 1)*ENEMYLEFT, (_img->getMaxFrameX() + 1) * (ENEMYLEFT + 1) - 1, false, true);
 				_anim->frameUpdate(TIMEMANAGER->getElapsedTime() * 8);
 				break;
@@ -72,22 +74,34 @@ void enemy::update()
 				break;
 			}
 			
-			//화면 밖에 나가려고 하면 밀어내고 방향 바꾸기
-			if (_x <= 0)
+			//적이 움직일 수 있는 영역 밖으로 나가려고 하면 밀어내고 방향 바꾸기
+			if (_x <= _moveArea.left)
 			{
-				_x = 0;
+				_x = _moveArea.left;
 				_direction = ENEMYRIGHT;
 				_angle = PI2;
 			}
-			if (_x+_img->getFrameWidth() >= WINSIZEX)
+			if (_x+_img->getFrameWidth() >= _moveArea.right)
 			{
-				_x = WINSIZEX- _img->getFrameWidth();
+				_x = _moveArea.right - _img->getFrameWidth();
 				_direction = ENEMYLEFT;
 				_angle = PI;
 			}
+
 		}
 	}
-	
+	//적의 왼쪽위
+	_probe[0] = PointMake(_x, _y);
+	_probe[1] = PointMake(_x + _img->getFrameWidth() / 2, _y);
+	_probe[2] = PointMake(_x + _img->getFrameWidth(), _y);
+	_probe[3] = PointMake(_x, _y + _img->getFrameHeight() / 2);
+	_probe[4] = PointMake(_x + _img->getFrameWidth(), _y + _img->getFrameHeight() / 2);
+	_probe[5] = PointMake(_x, _y + _img->getFrameHeight());
+	_probe[6] = PointMake(_x + _img->getFrameWidth() / 2, _y + _img->getFrameHeight());
+	_probe[7] = PointMake(_x + _img->getFrameWidth(), _y + _img->getFrameHeight());
+	_icanseeyou = RectMakeCenter(_x + _img->getFrameWidth() / 2, _y + _img->getFrameHeight() / 2, _img->getFrameWidth() * 3, _img->getFrameHeight() * 1);
+	//픽셀충돌
+	pixelCollisionFloor();
 	
 }
 void enemy::release()
@@ -124,8 +138,8 @@ float enemy::followPlayer(player* p)
 			//왼쪽으로 가다가 플레이어랑 부딪히면 오른쪽으로 밀어내기
 			if (_x <= p->getX()- CAMERAMANAGER->getX() + (p->getRect().right - p->getRect().left))
 			{
-				
 				_x = p->getX()- CAMERAMANAGER->getX() + (p->getRect().right - p->getRect().left);
+				
 			}
 		}
 		else
@@ -135,6 +149,7 @@ float enemy::followPlayer(player* p)
 			//오른쪽으로 가다가 플레이어랑 부딪히면 왼쪽으로 밀어내기
 			if (_x >= p->getX()-CAMERAMANAGER->getX())
 			{
+				
 				_x = p->getX()- CAMERAMANAGER->getX();
 			}
 		}
@@ -148,8 +163,17 @@ float enemy::followPlayer(player* p)
 
 void enemy::pixelCollisionFloor()
 {
+	
+	for (int p = 0; p < MAXPROBE; p++)
+	{
+		for (int i = _probe[p].y - 10; i < _probe[p].y + 10; ++i)
+		{
+			COLORREF color = GetPixel(IMAGEMANAGER->findImage("게임씬레이아웃")->getMemDC(), _probe[p].x, i);
 
-<<<<<<< HEAD
+			int r = GetRValue(color);
+			int g = GetGValue(color);
+			int b = GetBValue(color);
+
 			if (!(r == 255 && g == 0 && b == 255))
 			{
 				_y = i - _img->getHeight() / 2;
@@ -159,6 +183,4 @@ void enemy::pixelCollisionFloor()
 		}
 	}
 	
-=======
->>>>>>> 9fe46569239634daeb5529e2745db4111f839010
 }

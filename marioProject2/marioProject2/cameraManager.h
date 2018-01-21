@@ -9,8 +9,9 @@ private:
 	float _camY;
 
 	image* _bg;
-
-	RECT _rcCamera;
+	image* _pl;
+	float _plX;
+	float _plY;
 
 public:
 	cameraManager();
@@ -36,12 +37,19 @@ public:
 
 	void aniRender(string strKey, HDC hdc, int destX, int destY, animation* ani);
 
-	void setCameraXY(float x, float y);
 
+
+	void getBackGroundMemory(image* img) { _bg = img; }
+
+	void init(float playerX, float playerY);
+	void update(float playerX, float playerY);
+
+
+
+	//=================¹«¾µ¸ð=================
 	void plusCamX(float& playerX, float addX);
 	void plusCamY(float& playerY, float addY);
 
-	void getBackGroundMemory(image* img) { _bg = img; }
 
 	float getX() { return _camX; }
 	float getY() { return _camY; }

@@ -33,6 +33,7 @@ protected:
 	int _width, _height;
 
 	POINT _probe[MAXPROBE];
+	RECT _moveArea;
 
 public:
 	virtual HRESULT init(string imgKey, char* imgFileName, float x, float y, int totalWidth, int totalHeight, int frameNumX, int frameNumY);

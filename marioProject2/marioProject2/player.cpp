@@ -152,10 +152,6 @@ void player::KeyControl()
 			_jumpPower = 30;
 		}
 
-<<<<<<< HEAD
-		CAMERAMANAGER->plusCamY(_playerY, -_speed);
-		
-=======
 
 	 //_statusNum = JUMP;
 	 //if (_whereNum == ONLAND)
@@ -166,7 +162,6 @@ void player::KeyControl()
 
 		//CAMERAMANAGER->plusCamY(_playerY, -_speed);
 		_playerY -= _speed;
->>>>>>> f854863ac2f86132051c74b11b9756ab1f1e5cd7
 	}
 	if (KEYMANAGER->isStayKeyDown('S'))
 	{//¾Æ·¡
