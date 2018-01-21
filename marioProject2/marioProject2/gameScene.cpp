@@ -21,11 +21,8 @@ HRESULT gameScene::init()
 	_EM = new enemyManager;
 	_EM->init();
 	_player = new tanukiMario;
-<<<<<<< HEAD
-	_player->init("tanukiMarioIdleImage", ".\\image\\tanukiMarioIdle.bmp", 100, 535, 126, 270, 1, 2, TANUKI);
-=======
+
 	_player->init("tanukiMarioIdle", ".\\image\\tanukiMarioIdle.bmp", 285, 1190, 126, 270, 1, 2, TANUKI);
->>>>>>> d58fe25daeaced8bd8abaea00300cf425e295bef
 
 	_EM->setPlayer(_player);
 	
