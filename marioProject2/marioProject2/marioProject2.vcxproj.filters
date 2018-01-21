@@ -189,6 +189,9 @@
     <ClCompile Include="TTUtils.cpp">
       <Filter>2DGameFramework\utils</Filter>
     </ClCompile>
+    <ClCompile Include="shovelMario.cpp">
+      <Filter>playGround\player</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="randomFunction.h">
@@ -325,6 +328,9 @@
     </ClInclude>
     <ClInclude Include="TTUtils.h">
       <Filter>2DGameFramework\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="shovelMario.h">
+      <Filter>playGround\player</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
