@@ -85,8 +85,8 @@ void player::update()
 void player::render()
 {
 	draw();
-	TTTextOut(getMemDC(), 200, 10, "x", _ptMouse.x+CAMERAMANAGER->getX());
-	TTTextOut(getMemDC(), 200, 28, "x", _ptMouse.y + CAMERAMANAGER->getY());
+	TTTextOut(getMemDC(), 200, 10, "Mouse_X", _ptMouse.x + CAMERAMANAGER->getX());
+	TTTextOut(getMemDC(), 200, 28, "Mouse_Y", _ptMouse.y + CAMERAMANAGER->getY());
 
 }
 
@@ -133,6 +133,7 @@ void player::KeyControl()
 	}
 	if (KEYMANAGER->isOnceKeyDown('W'))
 	{//점프
+<<<<<<< HEAD
 		if (_whereNum == ONLAND)
 		{
 			_statusNum = JUMP;
@@ -141,6 +142,16 @@ void player::KeyControl()
 			_jumpPower = 30;
 		}
 
+=======
+	 //_statusNum = JUMP;
+	 //if (_whereNum == ONLAND)
+	 //{
+	 //	_whereNum = OFFLAND;
+	 //	_isJump = true;
+	 //}
+		CAMERAMANAGER->plusCamY(_playerY, -_speed);
+		//_playerY -= _speed;
+>>>>>>> 27bfb7d8c13c4fdd7337963623dcdc24de083cd6
 	}
 	if (KEYMANAGER->isStayKeyDown('S'))
 	{//아래
