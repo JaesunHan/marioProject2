@@ -47,5 +47,5 @@ void gameScene::render()
 
 void gameScene::collision(void)
 {
-	
+
 }
