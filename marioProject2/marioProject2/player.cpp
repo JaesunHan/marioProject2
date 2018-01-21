@@ -50,7 +50,7 @@ HRESULT player::init(string imgKey, char* imgFileName, float x, float y, int tot
 	_jumpPower = 3.0f;						//점프파워
 
 
-	//////상태 불값///////
+											//////상태 불값///////
 	_isRight = true;			//오른쪽 보고 있니?
 	_isIdle = true;				//대기상태
 	_isJump = false;			//점프상태니?	
@@ -72,8 +72,10 @@ void player::update()
 
 
 	playerFrameControl();
-	KeyControl();
+	//KeyControl();
 	move();
+
+	_playerRc = RectMake(_playerX - 35, _playerY - 135, 70, 135);
 }
 
 void player::render()
@@ -96,7 +98,7 @@ void player::playerFrameControl()
 
 void player::move()
 {
-	
+
 }
 
 void player::KeyControl()
@@ -104,30 +106,30 @@ void player::KeyControl()
 	if (KEYMANAGER->isStayKeyDown('A'))
 	{//왼쪽
 		_statusNum = MOVE;
-		if (_whereNum = ONLAND)
-		{
-			_imageName->setX(_imageName->getX() - _speed);
-		}
+
+		_playerX -= _speed;
+
 	}
 	if (KEYMANAGER->isStayKeyDown('D'))
 	{//오른쪽
 		_statusNum = MOVE;
-		if (_whereNum = ONLAND)
-		{
-			_imageName->setX(_imageName->getX() + _speed);
-		}
+
+		_playerX += _speed;
+
 	}
 	if (KEYMANAGER->isStayKeyDown('W'))
 	{//점프
-		_statusNum = JUMP;
-		if (_whereNum = ONLAND)
-		{
-			_whereNum = OFFLAND;
-			_isJump = true;
-		}
+	 //_statusNum = JUMP;
+	 //if (_whereNum == ONLAND)
+	 //{
+	 //	_whereNum = OFFLAND;
+	 //	_isJump = true;
+	 //}
+		_playerY -= _speed;
 	}
 	if (KEYMANAGER->isStayKeyDown('S'))
 	{//아래
+		_playerY += _speed;
 
 	}
 }
@@ -158,7 +160,7 @@ void player::imageControl()
 	default: //IDLE상태이미지 디폴트로 
 		break;
 
-	case IDLE: 
+	case IDLE:
 		break;
 
 	case JUMP:
@@ -171,3 +173,4 @@ void player::imageControl()
 		break;
 	}
 }
+

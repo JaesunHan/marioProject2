@@ -18,7 +18,7 @@ HRESULT enemyWiggle::init()
 	
 	enemy::init("enemyWiggle", "./image/Wiggler.bmp", WINSIZEX/2, WINSIZEY-250, 720, 180, 4, 2);
 	_angle = PI;
-	_spd = 2.0f;
+	_spd = 1.6f;
 	
 	_direction = ENEMYLEFT;
 	_status = ENEMYIDLE;
