@@ -15,7 +15,6 @@ enemyWiggle::~enemyWiggle()
 
 HRESULT enemyWiggle::init()	   
 {
-	
 	enemy::init("enemyWiggle", "./image/Wiggler.bmp", WINSIZEX/2, WINSIZEY-250, 720, 180, 4, 2);
 	_angle = PI;
 	_spd = 1.6f;
@@ -29,11 +28,10 @@ void enemyWiggle::update()
 {
 	enemy::update();
 	
-	if (KEYMANAGER->isOnceKeyDown('S')) {
+	if (KEYMANAGER->isOnceKeyDown('P')) {
 		enemy::startAnim();
 		_status = ENEMYWALK;
 	}
-	
 }
 void enemyWiggle::release()	   
 {
