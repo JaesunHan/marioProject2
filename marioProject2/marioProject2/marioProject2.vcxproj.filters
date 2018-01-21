@@ -186,9 +186,12 @@
     <ClCompile Include="TTUtils.cpp">
       <Filter>2DGameFramework\utils</Filter>
     </ClCompile>
+<<<<<<< HEAD
+=======
     <ClCompile Include="stdafx.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+>>>>>>> 05a359ee9985ddc6f6976a0d3931feba8cf675ab
     <ClCompile Include="shovelMario.cpp">
       <Filter>playGround\player</Filter>
     </ClCompile>
