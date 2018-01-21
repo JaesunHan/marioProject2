@@ -12,6 +12,7 @@ enum ENEMYDIRECTION
 	ENEMYRIGHT
 };
 
+class player;
 class enemy : public gameNode
 {
 protected:
@@ -24,7 +25,7 @@ protected:
 	float _angle, _spd;
 	ENEMYSTATUS	_status;
 	ENEMYDIRECTION _direction;
-
+	RECT _icanseeyou;
 
 	int _width, _height;
 
@@ -36,6 +37,7 @@ public:
 	virtual void draw(HDC hdc);
 
 	virtual void startAnim();
+	virtual float followPlayer(player* p);
 
 	enemy();
 	~enemy();

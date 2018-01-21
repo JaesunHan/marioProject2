@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "enemy.h"
+#include "player.h"
 
 
 
@@ -23,6 +24,7 @@ HRESULT enemy::init(string imgKey, char* imgFileName, float x, float y, int tota
 	_anim->setDefPlayFrame(false, true);
 	_anim->setFPS(1);
 
+	_icanseeyou = RectMakeCenter(_x+_img->getFrameWidth()/2, _y+_img->getFrameHeight()/2, _img->getFrameWidth() * 3, _img->getFrameHeight() * 1);
 
 	return S_OK;
 }
@@ -37,19 +39,20 @@ void enemy::update()
 		{
 			//움직이기
 			_x += cosf(_angle)*_spd;
+			_y += -sinf(_angle)*_spd;
 
 			//방향에 따라 애니메이션의 플레이 셋 변경
 			switch (_direction)
 			{
 			//왼쪽으로 갈때
 			case ENEMYLEFT:
-				_angle = PI;
+				//_angle = PI;
 				_anim->setPlayFrame((_img->getMaxFrameX() + 1)*ENEMYLEFT, (_img->getMaxFrameX() + 1) * (ENEMYLEFT + 1) - 1, false, true);
 				_anim->frameUpdate(TIMEMANAGER->getElapsedTime() * 8);
 				break;
 			//오른쪽으로 갈때
 			case ENEMYRIGHT:
-				_angle = PI2;
+				//_angle = PI2;
 				_anim->setPlayFrame((_img->getMaxFrameX() + 1)*ENEMYRIGHT, (_img->getMaxFrameX()+1) * (ENEMYRIGHT + 1) - 1, false, true);
 				_anim->frameUpdate(TIMEMANAGER->getElapsedTime() * 8);
 				break;
@@ -62,12 +65,13 @@ void enemy::update()
 			{
 				_x = 0;
 				_direction = ENEMYRIGHT;
+				_angle = PI2;
 			}
 			if (_x+_img->getFrameWidth() >= WINSIZEX)
 			{
 				_x = WINSIZEX- _img->getFrameWidth();
 				_direction = ENEMYLEFT;
-
+				_angle = PI;
 			}
 		}
 	}
@@ -89,4 +93,32 @@ void enemy::draw(HDC hdc)
 void enemy::startAnim()
 {
 	_anim->start();
+}
+
+float enemy::followPlayer(player* p)
+{
+	RECT rc;
+	//적의 시야 안에 플레이어가 들어오면
+	if (IntersectRect(&rc, &p->getRect(), &_icanseeyou))
+	{
+		_angle = getAngle(_x + _img->getFrameWidth() / 2, _y + _img->getFrameHeight() / 2, p->getX(), p->getY());
+		//앵글이 2, 3 사분면 일때
+		if (_angle < (PI / 2 * 3) && _angle >= PI / 2)
+		{
+			//방향은 왼쪽이므로 왼쪽으로 움직이는 그림을 출력해야됨
+			_direction = ENEMYLEFT;
+		}
+		else
+		{
+			//방향은 오른쪽이므로 오른쪽으로 움직이는 그림을 출력해야됨
+			_direction = ENEMYRIGHT;
+		}
+	}
+	//적의 시야안에 플레이어가 안들어와있으면
+	else 
+	{
+		_direction = ENEMYRIGHT;
+		_angle = PI2;
+	}
+	return _angle;
 }
