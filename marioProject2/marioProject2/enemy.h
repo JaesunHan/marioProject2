@@ -1,5 +1,7 @@
 #pragma once
 #include "gameNode.h"
+
+#define MAXPROBE 8
 enum ENEMYSTATUS
 {
 	ENEMYIDLE,
@@ -30,6 +32,8 @@ protected:
 	string _imgKeyString;
 	int _width, _height;
 
+	POINT _probe[MAXPROBE];
+
 public:
 	virtual HRESULT init(string imgKey, char* imgFileName, float x, float y, int totalWidth, int totalHeight, int frameNumX, int frameNumY);
 	virtual void update();
@@ -39,6 +43,7 @@ public:
 
 	virtual void startAnim();
 	virtual float followPlayer(player* p);
+	virtual void pixelCollisionFloor();
 
 	enemy();
 	~enemy();
