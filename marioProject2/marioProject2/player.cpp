@@ -48,7 +48,7 @@ HRESULT player::init(string imgKey, char* imgFileName, float x, float y, int tot
 	_speed = 3.0f;							//스피드
 	_countDead = 0;							//죽었는지 카운트
 	_angle = PI;							//횡스크롤이니까.. 180도
-	_gravity = 0.14f;						//중력값
+	_gravity = 1.4f;						//중력값
 	_jumpPower = 3.0f;						//점프파워
 
 
@@ -75,7 +75,7 @@ void player::update()
 
 	playerFrameControl();
 	KeyControl();
-	//move();
+	move();
 
 	_playerRc = RectMake(_playerX - 35, _playerY - 135, 70, 135);
 	//CAMERAMANAGER->getX();
@@ -105,7 +105,12 @@ void player::playerFrameControl()
 
 void player::move()
 {
-
+	if (_whereNum == OFFLAND)
+	{
+		_playerY -= _jumpPower;
+		_jumpPower -= _gravity;
+		CAMERAMANAGER->plusCamY(_playerY, -_jumpPower);
+	}
 }
 
 void player::KeyControl()
@@ -113,32 +118,64 @@ void player::KeyControl()
 	if (KEYMANAGER->isStayKeyDown('A'))
 	{//왼쪽
 		_statusNum = MOVE;
+<<<<<<< HEAD
 
 		//CAMERAMANAGER->plusCamX(_playerX, -_speed);
 		_playerX -= _speed;
+=======
+		_RtBlock = false;
+		if (_LtBlock == false) CAMERAMANAGER->plusCamX(_playerX, -_speed);
+		//_playerX -= _speed;
+>>>>>>> 51b009e8ed20d98a1114916f775d1fea3a5adb9c
 
 	}
 	if (KEYMANAGER->isStayKeyDown('D'))
 	{//오른쪽
 		_statusNum = MOVE;
+<<<<<<< HEAD
 		//CAMERAMANAGER->plusCamX(_playerX, +_speed);
 		_playerX += _speed;
+=======
+		_LtBlock = false;
+		if (_RtBlock == false) CAMERAMANAGER->plusCamX(_playerX, +_speed);
+		//_playerX += _speed;
+>>>>>>> 51b009e8ed20d98a1114916f775d1fea3a5adb9c
 
 	}
-	if (KEYMANAGER->isStayKeyDown('W'))
+	if (KEYMANAGER->isOnceKeyDown('W'))
 	{//점프
+<<<<<<< HEAD
+		if (_whereNum == ONLAND)
+		{
+			_statusNum = JUMP;
+			_whereNum = OFFLAND;
+			_isJump = true;
+			_jumpPower = 30;
+		}
+
+=======
 	 //_statusNum = JUMP;
 	 //if (_whereNum == ONLAND)
 	 //{
 	 //	_whereNum = OFFLAND;
 	 //	_isJump = true;
 	 //}
+<<<<<<< HEAD
 		//CAMERAMANAGER->plusCamY(_playerY, -_speed);
 		_playerY -= _speed;
 	}
 	if (KEYMANAGER->isStayKeyDown('S'))
 	{//아래
 		//CAMERAMANAGER->plusCamY(_playerY, +_speed);
+=======
+		CAMERAMANAGER->plusCamY(_playerY, -_speed);
+		//_playerY -= _speed;
+>>>>>>> 27bfb7d8c13c4fdd7337963623dcdc24de083cd6
+	}
+	if (KEYMANAGER->isStayKeyDown('S'))
+	{//아래
+		CAMERAMANAGER->plusCamY(_playerY, +_speed);
+>>>>>>> 51b009e8ed20d98a1114916f775d1fea3a5adb9c
 		_playerY += _speed;
 
 	}
