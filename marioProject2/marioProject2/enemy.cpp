@@ -183,5 +183,5 @@ void enemy::pixelCollisionFloor()
 
 		}
 	}
-	if(_)
+	
 }
