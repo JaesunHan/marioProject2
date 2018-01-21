@@ -23,8 +23,6 @@ HRESULT playGround::init()
 	
 	SCENEMANAGER->changeScene("≈∏¿Ã∆≤æ¿");
 
-
-	
 	return S_OK;
 }
 

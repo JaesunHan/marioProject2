@@ -21,7 +21,7 @@ HRESULT gameScene::init()
 	_EM->init();
 	_player = new tanukiMario;
 	_player->init("tanukiMarioIdleImage", ".\\image\\tanukiMarioIdle.bmp", 100, 535, 126, 270, 1, 2, TANUKI);
-	
+	_EM->setPlayer(_player);
 
 	return S_OK;
 }

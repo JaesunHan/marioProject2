@@ -7,6 +7,7 @@ class enemyManager : public gameNode
 {
 private:
 	enemyWiggle* _wiggle;
+	player* _p;
 public:
 	HRESULT init();
 	void update();
@@ -14,7 +15,10 @@ public:
 	void render();
 	void draw();
 
-
+	void setPlayer(player* p)
+	{
+		_p = p;
+	}
 
 	enemyManager();
 	~enemyManager();
