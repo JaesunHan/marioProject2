@@ -78,6 +78,9 @@ protected:
 	bool _isJump;				//점프상태니?
 	bool _isGravity;			//중력 받는 상태니?
 	bool _isBasic;				//베이직 마리오 상태니? true면 베이직 마리오 init, 아니면 다른 마리오 init
+	bool _RtBlock = false;
+	bool _LtBlock = false;
+
 
 public:
 
@@ -121,4 +124,7 @@ public:
 	void setStatusNum(PLAYERSTATUS statusNum) { _statusNum = statusNum; }
 	void setWhereNum(PLAYERWHERE whereNum) { _whereNum = whereNum; }
 
+	
+	inline void setPlayerRtBlock(bool block) { _RtBlock = block; }
+	inline void setPlayerLtBlock(bool block) { _LtBlock = block; }
 };

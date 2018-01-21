@@ -74,8 +74,8 @@ void player::update()
 
 
 	playerFrameControl();
-	//KeyControl();
-	move();
+	KeyControl();
+	//move();
 
 	_playerRc = RectMake(_playerX - 35, _playerY - 135, 70, 135);
 }
@@ -109,14 +109,15 @@ void player::KeyControl()
 	{//왼쪽
 		_statusNum = MOVE;
 
-		_playerX -= _speed;
+		CAMERAMANAGER->plusCamX(_playerX, -_speed);
+		//_playerX -= _speed;
 
 	}
 	if (KEYMANAGER->isStayKeyDown('D'))
 	{//오른쪽
 		_statusNum = MOVE;
-
-		_playerX += _speed;
+		CAMERAMANAGER->plusCamX(_playerX, +_speed);
+		//_playerX += _speed;
 
 	}
 	if (KEYMANAGER->isStayKeyDown('W'))
@@ -127,13 +128,16 @@ void player::KeyControl()
 	 //	_whereNum = OFFLAND;
 	 //	_isJump = true;
 	 //}
+		CAMERAMANAGER->plusCamY(_playerY, -_speed);
 		_playerY -= _speed;
 	}
 	if (KEYMANAGER->isStayKeyDown('S'))
 	{//아래
-		_playerY += _speed;
+		CAMERAMANAGER->plusCamY(_playerY, +_speed);
+		//_playerY += _speed;
 
 	}
+
 }
 
 void player::playerJump()
