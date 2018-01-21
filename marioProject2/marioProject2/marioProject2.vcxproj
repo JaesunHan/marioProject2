@@ -143,6 +143,7 @@
     <ClCompile Include="animation.cpp" />
     <ClCompile Include="basicMario.cpp" />
     <ClCompile Include="button.cpp" />
+    <ClCompile Include="cameraManager.cpp" />
     <ClCompile Include="collision.cpp" />
     <ClCompile Include="database.cpp" />
     <ClCompile Include="effect.cpp" />
@@ -179,6 +180,7 @@
     <ClInclude Include="animation.h" />
     <ClInclude Include="basicMario.h" />
     <ClInclude Include="button.h" />
+    <ClInclude Include="cameraManager.h" />
     <ClInclude Include="collision.h" />
     <ClInclude Include="commonMacroFunction.h" />
     <ClInclude Include="database.h" />

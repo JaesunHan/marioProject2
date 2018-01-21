@@ -10,6 +10,17 @@ private:
 	player* _player;
 	player* _basicMario;
 	enemyManager* _EM;
+	image* _backGround;
+
+
+	//=================== ÇÈ¼¿collision ¹Ù´Ú===================
+	image* _img;		//ÇÃ·¹ÀÌ¾î
+	bool _isAir;
+	float _gravity;
+	float _speed;
+	float _x;
+	float _y;
+	//===========================================
 	
 public:
 	gameScene();
@@ -21,5 +32,7 @@ public:
 	void release();
 	void update();
 	void render();
+
+	bool isMazen(COLORREF color);
 };
 
