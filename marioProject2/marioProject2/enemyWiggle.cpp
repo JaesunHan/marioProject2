@@ -44,5 +44,6 @@ void enemyWiggle::draw(HDC hdc)
 	{
 		Rectangle(hdc, _icanseeyou.left, _icanseeyou.top, _icanseeyou.right, _icanseeyou.bottom);
 	}
-	_img->aniRender(hdc, _x, _y, _anim);
+	//_img->aniRender(hdc, _x, _y, _anim);
+	CAMERAMANAGER->aniRender(_imgKeyString, hdc, _x, _y, _anim);
 }

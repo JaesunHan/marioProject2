@@ -27,6 +27,16 @@ HRESULT enemy::init(string imgKey, char* imgFileName, float x, float y, int tota
 
 	_icanseeyou = RectMakeCenter(_x+_img->getFrameWidth()/2, _y+_img->getFrameHeight()/2, _img->getFrameWidth() * 3, _img->getFrameHeight() * 1);
 
+	//적의 왼쪽위
+	_probe[0] = PointMake(_x, _y);
+	_probe[1] = PointMake(_x + _img->getFrameWidth()/2, _y);
+	_probe[2] = PointMake(_x + _img->getFrameWidth(), _y);
+	_probe[3] = PointMake(_x, _y + _img->getFrameHeight() / 2);
+	_probe[4] = PointMake(_x + _img->getFrameWidth(), _y + _img->getFrameHeight()/2);
+	_probe[5] = PointMake(_x, _y + _img->getFrameHeight());
+	_probe[6] = PointMake(_x + _img->getFrameWidth() / 2, _y + _img->getFrameHeight());
+	_probe[7] = PointMake(_x + _img->getFrameWidth(), _y + _img->getFrameHeight());
+
 	return S_OK;
 }
 void enemy::update() 
@@ -92,6 +102,7 @@ void enemy::draw(HDC hdc)
 {
 	//_img->aniRender(hdc, _x, _y, _anim);
 	CAMERAMANAGER->aniRender(_imgKeyString, hdc, _x, _y, _anim);
+
 }
 void enemy::startAnim()
 {
@@ -111,9 +122,10 @@ float enemy::followPlayer(player* p)
 			//방향은 왼쪽이므로 왼쪽으로 움직이는 그림을 출력해야됨
 			_direction = ENEMYLEFT;
 			//왼쪽으로 가다가 플레이어랑 부딪히면 오른쪽으로 밀어내기
-			if (_x <= p->getX() + (p->getRect().right - p->getRect().left))
+			if (_x <= p->getX()- CAMERAMANAGER->getX() + (p->getRect().right - p->getRect().left))
 			{
-				_x = p->getX() + (p->getRect().right - p->getRect().left);
+				
+				_x = p->getX()- CAMERAMANAGER->getX() + (p->getRect().right - p->getRect().left);
 			}
 		}
 		else
@@ -121,21 +133,20 @@ float enemy::followPlayer(player* p)
 			//방향은 오른쪽이므로 오른쪽으로 움직이는 그림을 출력해야됨
 			_direction = ENEMYRIGHT;
 			//오른쪽으로 가다가 플레이어랑 부딪히면 왼쪽으로 밀어내기
-			if (_x >= p->getX())
+			if (_x >= p->getX()-CAMERAMANAGER->getX())
 			{
-				_x = p->getX();
+				_x = p->getX()- CAMERAMANAGER->getX();
 			}
-
 		}
 	}
-	//적의 시야안에 플레이어가 안들어와있으면
-	//else 
-	//{
-	//	_direction = ENEMYRIGHT;
-	//	_angle = PI2;
-	//}
+	
+	
 	
 
-
 	return _angle;
+}
+
+void enemy::pixelCollisionFloor()
+{
+
 }
