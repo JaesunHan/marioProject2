@@ -223,6 +223,7 @@ void selectScene::saveTxt()
 			char temp[128];
 			vector<string> vStr;
 
+			vStr.push_back("|");
 			vStr.push_back("플레이어");
 			vStr.push_back(itoa(1, temp, 10));
 
@@ -236,6 +237,7 @@ void selectScene::saveTxt()
 			char temp[128];
 			vector<string> vStr;
 
+			vStr.push_back("|");
 			vStr.push_back("플레이어");
 			vStr.push_back(itoa(2, temp, 10));
 
@@ -249,6 +251,7 @@ void selectScene::saveTxt()
 			char temp[128];
 			vector<string> vStr;
 
+			vStr.push_back("|");
 			vStr.push_back("플레이어");
 			vStr.push_back(itoa(3, temp, 10));
 			TXTDATA->txtSave("save22", vStr);
