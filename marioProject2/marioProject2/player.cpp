@@ -118,33 +118,32 @@ void player::KeyControl()
 	if (KEYMANAGER->isStayKeyDown('A'))
 	{//왼쪽
 		_statusNum = MOVE;
-<<<<<<< HEAD
+
 
 		//CAMERAMANAGER->plusCamX(_playerX, -_speed);
 		_playerX -= _speed;
-=======
+
 		_RtBlock = false;
 		if (_LtBlock == false) CAMERAMANAGER->plusCamX(_playerX, -_speed);
 		//_playerX -= _speed;
->>>>>>> 51b009e8ed20d98a1114916f775d1fea3a5adb9c
+
 
 	}
 	if (KEYMANAGER->isStayKeyDown('D'))
 	{//오른쪽
 		_statusNum = MOVE;
-<<<<<<< HEAD
+
 		//CAMERAMANAGER->plusCamX(_playerX, +_speed);
-		_playerX += _speed;
-=======
+
 		_LtBlock = false;
-		if (_RtBlock == false) CAMERAMANAGER->plusCamX(_playerX, +_speed);
-		//_playerX += _speed;
->>>>>>> 51b009e8ed20d98a1114916f775d1fea3a5adb9c
+		if (_RtBlock == false) _playerX += _speed;
+
+		
 
 	}
 	if (KEYMANAGER->isOnceKeyDown('W'))
 	{//점프
-<<<<<<< HEAD
+
 		if (_whereNum == ONLAND)
 		{
 			_statusNum = JUMP;
@@ -153,30 +152,30 @@ void player::KeyControl()
 			_jumpPower = 30;
 		}
 
-=======
+
 	 //_statusNum = JUMP;
 	 //if (_whereNum == ONLAND)
 	 //{
 	 //	_whereNum = OFFLAND;
 	 //	_isJump = true;
 	 //}
-<<<<<<< HEAD
+
 		//CAMERAMANAGER->plusCamY(_playerY, -_speed);
 		_playerY -= _speed;
 	}
 	if (KEYMANAGER->isStayKeyDown('S'))
 	{//아래
 		//CAMERAMANAGER->plusCamY(_playerY, +_speed);
-=======
-		CAMERAMANAGER->plusCamY(_playerY, -_speed);
-		//_playerY -= _speed;
->>>>>>> 27bfb7d8c13c4fdd7337963623dcdc24de083cd6
-	}
-	if (KEYMANAGER->isStayKeyDown('S'))
-	{//아래
-		CAMERAMANAGER->plusCamY(_playerY, +_speed);
->>>>>>> 51b009e8ed20d98a1114916f775d1fea3a5adb9c
+
+		//CAMERAMANAGER->plusCamY(_playerY, -_speed);
 		_playerY += _speed;
+
+	}
+	if (KEYMANAGER->isStayKeyDown('A'))
+	{//아래
+		//CAMERAMANAGER->plusCamY(_playerY, +_speed);
+
+		_playerX -= _speed;
 
 	}
 
