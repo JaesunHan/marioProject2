@@ -186,6 +186,9 @@
     <ClCompile Include="playGround+sound.cpp">
       <Filter>playGround</Filter>
     </ClCompile>
+    <ClCompile Include="TTUtils.cpp">
+      <Filter>2DGameFramework\utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="randomFunction.h">
@@ -319,6 +322,9 @@
     </ClInclude>
     <ClInclude Include="targetver.h">
       <Filter>헤더 파일\정리</Filter>
+    </ClInclude>
+    <ClInclude Include="TTUtils.h">
+      <Filter>2DGameFramework\utils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -21,12 +21,13 @@ void basicMario::release()
 
 void basicMario::update()
 {
-	KeyControl();
+	player::update();
 }
 
 void basicMario::render()
 {
-	IMAGEMANAGER->findImage("베이직마리오대기_우")->frameRender(getMemDC(), _playerX, _playerY, _currentFrameX, _directionNum);
+	player::render();
+	//IMAGEMANAGER->findImage("베이직마리오대기_우")->frameRender(getMemDC(), _playerX, _playerY, _currentFrameX, _directionNum);
 }
 
 void basicMario::imageControl()
