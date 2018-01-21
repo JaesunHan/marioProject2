@@ -15,6 +15,8 @@ titleScene::~titleScene(void)
 HRESULT titleScene::init()
 {
 	IMAGEMANAGER->addImage("backGround(title)", ".//image//backGround(title).bmp", WINSIZEX, WINSIZEY, false, RGB(255, 0, 255));
+
+
 	return S_OK;
 }
 void titleScene::release()

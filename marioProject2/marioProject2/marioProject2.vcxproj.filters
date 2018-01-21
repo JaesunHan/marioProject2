@@ -183,6 +183,9 @@
     <ClCompile Include="basicMario.cpp">
       <Filter>playGround\player</Filter>
     </ClCompile>
+    <ClCompile Include="playGround+sound.cpp">
+      <Filter>playGround</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="randomFunction.h">

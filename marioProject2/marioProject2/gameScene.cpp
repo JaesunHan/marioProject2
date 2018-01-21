@@ -23,6 +23,12 @@ HRESULT gameScene::init()
 	_player->init("tanukiMarioIdleImage", ".\\image\\tanukiMarioIdle.bmp", 100, 535, 126, 270, 1, 2, TANUKI);
 	
 
+	//입장 효과음
+	SOUNDMANAGER->play("menuEnter");
+
+	//BGM play
+	SOUNDMANAGER->play("BGM", 0.5f);
+
 	return S_OK;
 }
 
