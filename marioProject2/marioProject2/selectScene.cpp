@@ -54,7 +54,13 @@ HRESULT selectScene::init()
 	//=======================================================================================================
 
 	//선택된 캐릭터를 저장할 변수
-	_selectPlayer = SELECT_MARIO1;
+	_selectPlayer = SELECT_NONE;
+
+	//효과음 플레이 한번만 하도록
+	_selectSoundPlay = false;
+
+	//입장 효과음
+	SOUNDMANAGER->play("menuEnter");
 
 	return S_OK;
 }
@@ -73,7 +79,9 @@ void selectScene::update()
 	{
 	    //이미지 체인지
 		int tanukiAniArray[] = { 0 };
-		_Mario1.ani->setPlayFrame(tanukiAniArray, 1, false);	
+		_Mario1.ani->setPlayFrame(tanukiAniArray, 1, false);
+
+		_selectPlayer = SELECT_NONE;
 	}
 	else
 	{
@@ -81,6 +89,14 @@ void selectScene::update()
 		int tanukiAniArray[] = { 1 };
 		_Mario1.ani->setPlayFrame(tanukiAniArray, 1, false);
 		_selectPlayer = SELECT_MARIO1;
+
+
+		//효과음 play
+		if (!SOUNDMANAGER->isPlaySound("marioJump") && !_selectSoundPlay)
+		{
+			_selectSoundPlay = true;
+			SOUNDMANAGER->play("marioJump");
+		}
 
 		if (KEYMANAGER->isOnceKeyDown(VK_LBUTTON))
 		{
@@ -97,6 +113,7 @@ void selectScene::update()
 		//이미지 체인지
 		int tanukiAniArray[] = { 0 };
 		_Mario2.ani->setPlayFrame(tanukiAniArray, 1, false);
+
 	}
 	else
 	{
@@ -104,6 +121,14 @@ void selectScene::update()
 		int tanukiAniArray[] = { 1 };
 		_Mario2.ani->setPlayFrame(tanukiAniArray, 1, false);
 		_selectPlayer = SELECT_MARIO2;
+
+
+		//효과음 play
+		if (!SOUNDMANAGER->isPlaySound("marioJump") && !_selectSoundPlay)
+		{
+			_selectSoundPlay = true;
+			SOUNDMANAGER->play("marioJump");
+		}
 
 		if (KEYMANAGER->isOnceKeyDown(VK_LBUTTON))
 		{
@@ -120,6 +145,7 @@ void selectScene::update()
 		//이미지 체인지
 		int tanukiAniArray[] = { 0 };
 		_Mario3.ani->setPlayFrame(tanukiAniArray, 1, false);
+
 	}
 	else
 	{
@@ -128,6 +154,13 @@ void selectScene::update()
 		_Mario3.ani->setPlayFrame(tanukiAniArray, 1, false);
 		_selectPlayer = SELECT_MARIO3;
 
+		//효과음 play
+		if (!SOUNDMANAGER->isPlaySound("marioJump") && !_selectSoundPlay)
+		{
+			_selectSoundPlay = true;
+			SOUNDMANAGER->play("marioJump");
+		}
+
 		if (KEYMANAGER->isOnceKeyDown(VK_LBUTTON))
 		{	
 			SCENEMANAGER->changeScene("게임씬");
@@ -135,6 +168,12 @@ void selectScene::update()
 	}
 	//=============================================================
 
+
+	//효과음 초기화
+	if (!SOUNDMANAGER->isPlaySound("marioJump") && _selectPlayer == SELECT_NONE)
+	{
+		_selectSoundPlay = false;
+	}
 }
 
 void selectScene::render() 
@@ -175,6 +214,7 @@ void selectScene::render()
 
 	//=========================================================================================================== 테스트 출력
 	testRender(getMemDC(), "_selectPlayer: ", VK_TAB, _selectPlayer, 10, 100);
+	testRender(getMemDC(), "_selectSoundPlay: ", VK_TAB, _selectSoundPlay, 10, 120);
 }
 
 

@@ -21,9 +21,19 @@ HRESULT gameScene::init()
 	_EM->init();
 	_player = new tanukiMario;
 	_player->init("tanukiMarioIdleImage", ".\\image\\tanukiMarioIdle.bmp", 100, 535, 126, 270, 1, 2, TANUKI);
+<<<<<<< HEAD
 	
 	_basicMario = new basicMario;
 
+=======
+	_EM->setPlayer(_player);
+
+	//입장 효과음
+	SOUNDMANAGER->play("menuEnter");
+
+	//BGM play
+	SOUNDMANAGER->play("BGM", 0.5f);
+>>>>>>> 18fb4a36626db6e49bbcff0e41ef32ad2a4bc4fb
 
 	return S_OK;
 }
@@ -49,5 +59,12 @@ void gameScene::render()
 
 void gameScene::collision(void)
 {
+	if (_player->getJumpPower() < 0)
+	{
 
+	}
+	for (int i = 0; i < (_player->getJumpPower() * (-1) + 1); ++i)
+	{
+
+	}
 }

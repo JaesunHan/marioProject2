@@ -16,6 +16,7 @@ HRESULT playGround::init()
 {
 	gameNode::init(true);
 	addImage();
+	addSound();
 
 	SCENEMANAGER->addScene("ºø∑∫∆Ææ¿", new selectScene);
 	SCENEMANAGER->addScene("≈∏¿Ã∆≤æ¿", new titleScene);
@@ -23,8 +24,6 @@ HRESULT playGround::init()
 	
 	SCENEMANAGER->changeScene("≈∏¿Ã∆≤æ¿");
 
-
-	
 	return S_OK;
 }
 

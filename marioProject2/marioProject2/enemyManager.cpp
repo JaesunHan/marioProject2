@@ -23,6 +23,7 @@ HRESULT enemyManager::init()
 void enemyManager::update()
 {
 	_wiggle->update();
+	_wiggle->followPlayer(_p);
 }
 
 void enemyManager::release()
