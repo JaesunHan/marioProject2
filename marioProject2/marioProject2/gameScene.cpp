@@ -17,19 +17,20 @@ HRESULT gameScene::init()
 {
 	IMAGEMANAGER->addImage("게임씬백그라운드", ".\\image\\playSceneBackgroundFront.bmp", 8454, 1302, true, RGB(255, 0, 255));
 	IMAGEMANAGER->addImage("게임씬레이아웃", ".\\image\\playSceneBackgroundBack.bmp", 8454, 1302, true, RGB(255, 0, 255));
+	CAMERAMANAGER->getBackGroundMemory(IMAGEMANAGER->findImage("게임씬백그라운드"));
 	_EM = new enemyManager;
 	_EM->init();
 	_player = new tanukiMario;
 	_player->init("tanukiMarioIdle", ".\\image\\tanukiMarioIdle.bmp", 285, 1190, 126, 270, 1, 2, TANUKI);
 
+	_EM->setPlayer(_player);
 	
 	_basicMario = new basicMario;
 
 
-	_EM->setPlayer(_player);
 
 
-	CAMERAMANAGER->getBackGroundMemory(IMAGEMANAGER->findImage("게임씬백그라운드"));
+	
 
 	//입장 효과음
 	SOUNDMANAGER->play("menuEnter");
@@ -145,17 +146,19 @@ void gameScene::collision(void)
 	color1 = GetPixel(hdc, _player->getRect().right + 1, _player->getRect().bottom);
 	color2 = GetPixel(hdc, _player->getRect().right + 1, _player->getRect().top);
 	color3 = GetPixel(hdc, _player->getRect().right + 1, (_player->getRect().top + _player->getRect().bottom) / 2);
-	if (!isMazen(color1) || !isMazen(color2) || !isMazen(color3))
+	if (isMazen(color1) && isMazen(color2) && isMazen(color3))
 	{
-		_player->setPlayerRtBlock(true);
+		_player->setPlayerRtBlock(false);
 	}
+	else _player->setPlayerRtBlock(true);
 	color1 = GetPixel(hdc, _player->getRect().left - 1, _player->getRect().bottom);
 	color2 = GetPixel(hdc, _player->getRect().left - 1, _player->getRect().top);
 	color3 = GetPixel(hdc, _player->getRect().left - 1, (_player->getRect().top + _player->getRect().bottom) / 2);
-	if (!isMazen(color1) || !isMazen(color2) || !isMazen(color3))
+	if (isMazen(color1) && isMazen(color2) && isMazen(color3))
 	{
-		_player->setPlayerLtBlock(true);
+		_player->setPlayerRtBlock(false);
 	}
+	else _player->setPlayerRtBlock(true);
 }
 
 bool gameScene::isMazen(COLORREF color)

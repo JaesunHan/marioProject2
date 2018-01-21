@@ -99,7 +99,7 @@ public:
 	virtual void KeyControl();											//키컨트롤 함수
 	void playerJump();													//점프함수
 	void draw();														//랜더전에 따로 그려서 관리하는 함수
-	virtual void imageControl();										//이미지 변환제어 함수
+	virtual image* imageControl();										//이미지 변환제어 함수
 
 
 	inline RECT getRect() { return _playerRc; }							//렉트 반환용 겟함수

@@ -40,9 +40,6 @@
     <Filter Include="2DGameFramework\button">
       <UniqueIdentifier>{3ee1af64-5526-467c-a59a-37723f09cf4a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="2DGameFramework\effect">
-      <UniqueIdentifier>{bf790a84-b364-48d3-afd4-e1d65bd433ef}</UniqueIdentifier>
-    </Filter>
     <Filter Include="2DGameFramework\image">
       <UniqueIdentifier>{25967eca-e830-448e-9fb0-47c87f73a82f}</UniqueIdentifier>
     </Filter>
@@ -79,11 +76,11 @@
     <Filter Include="헤더 파일\정리">
       <UniqueIdentifier>{333948fc-a914-4b26-a760-e2853b77f5b3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="2DGameFramework\effect">
+      <UniqueIdentifier>{bf790a84-b364-48d3-afd4-e1d65bd433ef}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="winMain.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -189,6 +186,12 @@
     <ClCompile Include="TTUtils.cpp">
       <Filter>2DGameFramework\utils</Filter>
     </ClCompile>
+<<<<<<< HEAD
+=======
+    <ClCompile Include="stdafx.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+>>>>>>> 05a359ee9985ddc6f6976a0d3931feba8cf675ab
     <ClCompile Include="shovelMario.cpp">
       <Filter>playGround\player</Filter>
     </ClCompile>

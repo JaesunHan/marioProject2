@@ -30,7 +30,7 @@ void basicMario::render()
 	//IMAGEMANAGER->findImage("베이직마리오대기_우")->frameRender(getMemDC(), _playerX, _playerY, _currentFrameX, _directionNum);
 }
 
-void basicMario::imageControl()
+image* basicMario::imageControl()
 {
 
 	//이미지 컨트롤용 스위치 케이스문
@@ -57,6 +57,7 @@ void basicMario::imageControl()
 
 			_count = 0;
 		}
+
 		break;
 
 	case IDLE:
@@ -70,6 +71,7 @@ void basicMario::imageControl()
 
 			_count = 0;
 		}
+
 		break;
 
 	case JUMP:
@@ -83,6 +85,7 @@ void basicMario::imageControl()
 
 			_count = 0;
 		}
+
 		break;
 
 	case MOVE:
@@ -96,9 +99,11 @@ void basicMario::imageControl()
 
 			_count = 0;
 		}
+
 		break;
 
 	case RUN://베이직마리오는 런 없습니당..........흐규흐규
 		break;
 	}
+	return NULL;
 }
