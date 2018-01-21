@@ -17,19 +17,20 @@ HRESULT gameScene::init()
 {
 	IMAGEMANAGER->addImage("게임씬백그라운드", ".\\image\\playSceneBackgroundFront.bmp", 8454, 1302, true, RGB(255, 0, 255));
 	IMAGEMANAGER->addImage("게임씬레이아웃", ".\\image\\playSceneBackgroundBack.bmp", 8454, 1302, true, RGB(255, 0, 255));
+	CAMERAMANAGER->getBackGroundMemory(IMAGEMANAGER->findImage("게임씬백그라운드"));
 	_EM = new enemyManager;
 	_EM->init();
 	_player = new tanukiMario;
 	_player->init("tanukiMarioIdle", ".\\image\\tanukiMarioIdle.bmp", 285, 1190, 126, 270, 1, 2, TANUKI);
 
+	_EM->setPlayer(_player);
 	
 	_basicMario = new basicMario;
 
 
-	_EM->setPlayer(_player);
 
 
-	CAMERAMANAGER->getBackGroundMemory(IMAGEMANAGER->findImage("게임씬백그라운드"));
+	
 
 	//입장 효과음
 	SOUNDMANAGER->play("menuEnter");

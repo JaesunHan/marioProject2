@@ -8,7 +8,7 @@ private:
 
 
 public:
-	void imageControl(void);
+	image* imageControl();
 
 
 	shovelMario();

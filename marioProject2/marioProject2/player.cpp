@@ -159,9 +159,8 @@ void player::draw()
 	CAMERAMANAGER->frameRender(_imageName, getMemDC(), _playerRc.left, _playerRc.top, _currentFrameX, _currentFrameY);
 }
 
-void player::imageControl()
+image* player::imageControl()
 {
-
 	//이미지 컨트롤용 스위치 케이스문
 	//각 케이스별의 이미지를 넣어주면 됩니다.
 	//_imageName = IMAGEMANAGER->findImage("이미지명") 사용으로 각 케이스별의 이미지를 주면 될거 같습니다.
@@ -183,5 +182,6 @@ void player::imageControl()
 	case RUN:
 		break;
 	}
+	return NULL;
 }
 

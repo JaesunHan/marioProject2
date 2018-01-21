@@ -11,7 +11,7 @@ shovelMario::~shovelMario()
 
 
 
-void shovelMario::imageControl()
+image* shovelMario::imageControl()
 {
 
 	//이미지 컨트롤용 스위치 케이스문
@@ -23,49 +23,58 @@ void shovelMario::imageControl()
 		default: //IDLE상태이미지 디폴트로 
 			if (_directionNum == RIGHT)
 			{
-				_imageName = IMAGEMANAGER->findImage("sKnightIdleR");
+				_imageName = "sKnightIdleR";
+				return IMAGEMANAGER->findImage(_imageName);
 			}
 			else if (_directionNum == LEFT)
 			{
-				_imageName = IMAGEMANAGER->findImage("sKnightIdleL");
+				_imageName = "sKnightIdleL";
+				return IMAGEMANAGER->findImage(_imageName);
 			}	
 		break;
 
 		case IDLE:
 			if (_directionNum == RIGHT)
 			{
-				_imageName = IMAGEMANAGER->findImage("sKnightIdleR");
+				_imageName = "sKnightIdleR";
+				return IMAGEMANAGER->findImage(_imageName);
 			}
 			else if (_directionNum == LEFT)
 			{
-				_imageName = IMAGEMANAGER->findImage("sKnightIdleL");
+				_imageName = "sKnightIdleL";
+				return IMAGEMANAGER->findImage(_imageName);
 			}
 		break;
 
 		case JUMP:
 			if (_directionNum == RIGHT)
 			{
-				_imageName = IMAGEMANAGER->findImage("sKnightJumpR");
+				_imageName = "sKnightJumpR";
+				IMAGEMANAGER->findImage(_imageName);
 			}
 			else if (_directionNum == LEFT)
 			{
-				_imageName = IMAGEMANAGER->findImage("sKnightJumpL");
+				_imageName = "sKnightJumpL";
+				IMAGEMANAGER->findImage(_imageName);
 			}
 		break;
 
 		case MOVE:
 			if (_directionNum == RIGHT)
 			{
-				_imageName = IMAGEMANAGER->findImage("sKnightWalkR");
+				_imageName = "sKnightWalkR";
+				return IMAGEMANAGER->findImage(_imageName);
 			}
 			else if (_directionNum == LEFT)
 			{
-				_imageName = IMAGEMANAGER->findImage("sKnightWalkL");
+				_imageName = "sKnightWalkL";
+				return IMAGEMANAGER->findImage(_imageName);
 			}
 		break;
 
 		case RUN:
-
+			return NULL;
 		break;
-	}
+	} 
+	return NULL;
 }
