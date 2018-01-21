@@ -22,6 +22,7 @@
 #include "effectManager.h"
 #include "iniDataManager.h"
 #include "sceneManager.h"
+#include "cameraManager.h"
 #include "utils.h"
 #include "collision.h"
 #include "txtData.h"
@@ -48,6 +49,7 @@ using namespace HEPTA_UTIL;
 #define TIMEMANAGER		timeManager::getSingleton()
 #define EFFECTMANAGER	effectManager::getSingleton()
 #define SCENEMANAGER	sceneManager::getSingleton()
+#define CAMERAMANAGER	cameraManager::getSingleton()
 #define TXTDATA			txtData::getSingleton()
 #define INIDATA			iniDataManager::getSingleton()
 #define DATABASE		database::getSingleton()
