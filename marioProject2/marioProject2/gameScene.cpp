@@ -28,20 +28,15 @@ HRESULT gameScene::init()
 
 	_EM->setPlayer(_player);
 
-<<<<<<< HEAD
+
 	CAMERAMANAGER->getBackGroundMemory(IMAGEMANAGER->findImage("게임씬백그라운드"));
-=======
+
 	//입장 효과음
 	SOUNDMANAGER->play("menuEnter");
 
 	//BGM play
 	SOUNDMANAGER->play("BGM", 0.5f);
-<<<<<<< HEAD
 
-=======
->>>>>>> 18fb4a36626db6e49bbcff0e41ef32ad2a4bc4fb
->>>>>>> 9a828e3f89c7374d9c87f610bc2da65d21a0a4c2
->>>>>>> 607276c7a35380c6314bc3ef18a8639c92ee0b52
 
 	return S_OK;
 }
@@ -67,9 +62,7 @@ void gameScene::render()
 
 void gameScene::collision(void)
 {
-<<<<<<< HEAD
 
-=======
 
 	if (_isAir)
 	{
@@ -159,5 +152,5 @@ bool gameScene::isMazen(COLORREF color)
 	int b = GetBValue(color);
 
 	return (r == 255 && g == 0 && b == 255);
->>>>>>> 90579ed3f8142dc46cdb345c1c61c6a9e4cb940a
+
 }

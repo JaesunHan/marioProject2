@@ -73,6 +73,9 @@
     <Filter Include="playGround\player">
       <UniqueIdentifier>{ec4bcdf2-0dc2-4217-b506-377e055603d1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="playGround\gameScene">
+      <UniqueIdentifier>{6134ca60-3064-4a67-b5ee-ed57fc3e5400}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -165,12 +168,6 @@
     <ClCompile Include="enemyWiggle.cpp">
       <Filter>playGround\enemy</Filter>
     </ClCompile>
-    <ClCompile Include="gameScene.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="playGround+sound.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="enemyManager.cpp">
       <Filter>playGround\enemy</Filter>
     </ClCompile>
@@ -179,6 +176,12 @@
     </ClCompile>
     <ClCompile Include="basicMario.cpp">
       <Filter>playGround\player</Filter>
+    </ClCompile>
+    <ClCompile Include="gameScene.cpp">
+      <Filter>playGround\gameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="playGround+sound.cpp">
+      <Filter>playGround</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -302,9 +305,6 @@
     <ClInclude Include="enemyWiggle.h">
       <Filter>playGround\enemy</Filter>
     </ClInclude>
-    <ClInclude Include="gameScene.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="enemyManager.h">
       <Filter>playGround\enemy</Filter>
     </ClInclude>
@@ -313,6 +313,9 @@
     </ClInclude>
     <ClInclude Include="basicMario.h">
       <Filter>playGround\player</Filter>
+    </ClInclude>
+    <ClInclude Include="gameScene.h">
+      <Filter>playGround\gameScene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
